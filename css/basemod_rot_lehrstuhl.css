@@ -1,0 +1,328 @@
+/**
+ * Projekt Vorlagenkatalog 
+ *
+ * Basisstylesheet Techfak 2013
+ *
+ * @mod_name        rot_lehrstuhl
+ * @mod_desc        Farbschema "rot" für Lehrstuhl-Websites
+ *
+ * @copyright       Copyright 2013-2020, RRZE
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/)
+ * @link            http://www.vorlagen.uni-erlangen.de
+ * @package         css
+ * @version         1.0
+ * @lastmodified    02/2013
+ */
+
+/* Farbvariante
+ *     #AD2624  - Basisfarbe 
+ */ 
+
+
+@media screen, projection
+{
+
+	/*  ------------------------------------------------------
+	HEADER
+	--------------------------------------------------------*/
+	
+	div#kopf {
+		background: url(/grafiken/techfak-2013/header-techfak-rot-0b.png) no-repeat scroll 40% 0% transparent;
+	}
+		
+	div#kopf div#logo {
+		background: url(/grafiken/techfak-2013/logo-techfak-blau-bg.png);
+		background-repeat: no-repeat;
+		background-position: 99% 0;
+	}
+	
+	div#kopf div#logo img {
+		float: left;
+		margin-top: 20px;
+	}
+	
+	div#kopf div#logo p {
+		display: block;
+		float: left;
+		padding: 15px 0 20px 20px;
+		color: #fff;
+		letter-spacing: 0.05em;
+		width: 35%;
+		max-height: 95px;
+	}
+	
+	div#kopf div#logo p a {
+		color: #fff;
+	}
+	
+	div#kopf div#hauptmenu {
+		background: #A4ABB3 url(/grafiken/techfak-2013/hauptmenue-bg-rot.png) repeat-y;
+		margin-left: -27px;
+		padding-left: 27px;
+	}
+	
+	div#kopf div#titel h1 {
+		color: #AD2624;
+	}
+	
+	/*  ------------------------------------------------------
+	MAIN
+	--------------------------------------------------------*/
+	
+	div#main {  
+		border-top: 0px solid #AD2624;			/* wird erst angezeigt bei disable_targetmenu */
+	}	
+	
+	/*  ------------------------------------------------------
+	MENU - MAIN
+	--------------------------------------------------------*/
+	
+	ul#navigation {
+		color: #000 !important;
+	}
+	
+	ul#navigation li span.aktiv,
+	ul#navigation ul#hauptnavigation li span.aktiv, 
+	ul#navigation ul#hauptnavigation li a.aktiv,
+	ul#navigation ul#hauptnavigation ul li span.aktiv,
+	ul#navigation ul#hauptnavigation ul li ul li span.aktiv  {
+		border-bottom: #AD2624 1px solid;
+	}
+	
+	/*  ------------------------------------------------------
+	CONTENT
+	--------------------------------------------------------*/
+	
+	div#content h2 {
+		border-bottom: 1px solid #AD2624;
+	}
+	
+	#content th {
+		border-right: 1px solid #AD2624;
+		border-bottom: 1px solid #AD2624;
+	}
+	
+	#content td {
+		border-right: 1px solid #AD2624;
+		border-bottom: 1px solid #AD2624;
+		border-top: 1px solid #AD2624;
+		background: #f7f8f9;
+	}
+	
+	#content tfoot td {
+		border-right: none;
+		background: #fff;
+	}
+	
+	#content table.wechselfarbe tr td {
+		background: #f7f8f9;
+	}
+	
+	#content table.wechselfarbe tr:nth-child(odd) td {
+		background: #eeeff1;
+	}
+	
+	#content div.box_rechts, 
+	#content div.klein_box_rechts,
+	#content div.vollbox {
+		border: 1px solid #AD2624;
+	}
+	
+	form fieldset {
+		background: #f7f8f9;
+	}
+	
+	form fieldset legend {
+		color: #AD2624;
+	}
+	
+	/*  ------------------------------------------------------
+	SIDEBAR
+	--------------------------------------------------------*/
+	
+	div#main div#sidebar h3 {
+		border-bottom: #AD2624 1px solid;
+	}
+	
+	/*  ------------------------------------------------------
+	FOOTER
+	--------------------------------------------------------*/
+
+}
+
+	
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  1090px
+--------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1090px) {
+	
+	div#kopf {
+	}
+	
+}
+
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  960px
+--------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 960px) {
+	
+	header {
+		width: 100%;
+	}
+
+	div#kopf {
+		background-position: 38% 0%;
+	}
+	
+	div#kopf div#logo {
+		padding-left: 10px !important;
+		background-size: 25%;
+	}
+	
+	div#kopf div#logo img {
+		max-width: 20%;
+	} 
+	
+	div#kopf div#logo p {
+		display: block;
+		top: 0 !important;
+		padding-left: 10px;
+		width: 45% !important;
+		max-width: 45% !important;
+	}
+	
+	div#footer {
+		margin-left: 0;
+		padding-left: 20px;	
+	}
+	
+	div#footer p {
+		margin-bottom: 10px;
+	}
+	
+	div#footer div#footerinfos div#tecmenu {
+		position: relative;
+		top: 0;
+		right: 0;
+	}
+	
+	div#footer div#footerinfos div#tecmenu ul li a:link {
+		text-decoration: underline;
+	}
+	
+	div#footer div#footerinfos div#tecmenu ul li a:hover,
+	div#footer div#footerinfos div#tecmenu ul li a:focus,
+	div#footer div#footerinfos div#tecmenu ul li a:active {
+		font-weight: bold;
+}
+
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  760px
+--------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 760px) {
+
+	div#kopf {
+		background-position: 40% 0%;
+	}
+	
+	div#kopf div#logo p {
+		/*width: 48% !important;
+		max-width: 48% !important;*/
+	}
+
+}
+
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  630px
+--------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 630px) {
+	
+	div#kopf {
+		background-position: 42% 0%;
+	}
+	
+	div#kopf div#logo {
+		/*background-size: 40% auto;*/
+	}
+	
+	div#kopf div#logo p {
+		width: 280px;
+		font-size: 1.2em !important;
+	}
+}
+
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  480px
+--------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 480px) {
+	
+	div#kopf {
+		background-image: none !important;
+		margin-left: 0;
+	}
+	
+	div#kopf div#logo {
+		margin-left: 21px;
+		padding-left: 0 !important;
+	}
+	
+	div#kopf div#logo p {
+		width: 100% !important;
+		max-width: 100% !important;
+		padding-top: 5px !important;
+		float: none;
+	}
+	
+	div#kopf div#logo p, 
+	div#kopf div#logo p a {
+		color: #AD2624;
+	}
+	
+	div#kopf div#logo img {
+		padding-top: 5px !important;
+		padding-left: 5px !important;
+		max-height: 45px !important;
+		width: auto !important;;
+		max-width: 40% !important;
+		max-height: 30% !important;
+		float: none;
+	}
+	
+	div#kopf div#titel {
+		margin: 15px 0 10px 0;
+		padding: 0 10px !important;
+	}
+	
+	div#kopf div#titel h1 {
+		margin: 0 !important;
+		padding: 10px 5px 10px 15px !important;
+		background: #AD2624;
+		color: #ffffff;
+	}
+
+	div#kopf div#sprungmarken {
+		margin-left: 0px;
+	}
+	
+	div#footer {
+		margin-left: 0;
+		padding: 0 10px;	
+	}
+	
+}
+
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  320px
+--------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 320px) {
+
+	div#kopf div#logo p {
+	}
+	
+}

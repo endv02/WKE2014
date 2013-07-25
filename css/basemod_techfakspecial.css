@@ -1,0 +1,32 @@
+/**
+ * Projekt Vorlagenkatalog 
+ *
+ * Basisstylesheet Techfak
+ *
+ * @mod_name        Besonderheiten die nur fuer die Techfak-Startseite gelten
+ * @mod_desc        Begrenzung der Design-Breite
+ *
+ * @copyright       Copyright 2005-2011, RRZE
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/)
+ * @link            http://www.vorlagen.uni-erlangen.de
+ * @package         css
+ * @version         3.0
+ * @lastmodified    10/2011
+ */
+ 
+@media screen, projection
+{
+	#zusatzinfo #languagebar {
+/*	 float:left; */
+	}
+	#zusatzinfo .werbung h1 {
+       	 background-color:#07476F; 
+       	 color:#fff !important; 
+       	 margin-bottom:5px;
+	}
+	
+	#hauptmenu ul li {
+		padding-left:12px;      
+    		background:url('/img/menu.gif') center left no-repeat;
+	}  
+}
