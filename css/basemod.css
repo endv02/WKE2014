@@ -21,7 +21,7 @@
 	BODY
 	--------------------------------------------------------*/
 	body { 
-		background: #eeeeee;
+		background: #2B517D;
 	}
 	
 	/*  ------------------------------------------------------
@@ -29,10 +29,7 @@
 	--------------------------------------------------------*/
 	div#seite { 
 		background: #fff;
-		max-width: 1173px; /* Maximale Breite in Pixeln */	
-		padding-left: 27px;
-		background: url(/grafiken/techfak-2013/balken-komplett.gif) no-repeat;
-                
+		max-width: 1200px; /* Maximale Breite in Pixeln */	
 		/*---------*/
 		box-shadow: 0 0 15px rgba(0,0,0,0.6); /* CSS3 Schatten (nur in modernen Browsern) - falls unerwünscht, einfach auskommentieren */
 		border-width: 10px; /* gleichmäßiger Rand, damit wirkt Schatten besser */
@@ -47,8 +44,8 @@
 	KOPF
 	--------------------------------------------------------*/	
 	div#kopf  {
-		background: url(/grafiken/techfak-2013/header_techfak-3b.png);
-		background-position: 50% 0%;
+		background: url(../images/header_wke2014_1.png);
+		background-position: top right;
 		background-repeat: no-repeat;
 	}
 	
@@ -57,31 +54,23 @@
 	KOPF MIT LOGO
 	--------------------------------------------------------*/	
 	div#kopf div#logo  {
-		height: 135px;
-		padding: 0 20px 0 10px;
+		height: 200px;
+		width: 345px;
+		padding: 0 10px;
 	}
 	
 	div#kopf div#logo img { 
 		position: static;
-		padding: 5px 0 5px 5px;
-		/*margin-top: 10px;*/
-		float: right;
 		background: #ffffff;
-		/*max-width: 180px;
-		max-height: 50%;*/
 		width: auto;
 		height: auto;
 	}
 	
 	div#kopf div#logo p {
-		max-height: 100px;
-		width: 32%;
-		padding: 20px 0 20px 5px;
-		font: 1.5em Arial, "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
-		font-weight: bold;
-		line-height: 120%;
-		color: #003366;
-		
+		position:absolute;
+		left:-3000px;
+		top:-3000px;
+		width:1px;		
 	}
 	div#kopf div#logo p .description {
 		  display: block;
@@ -113,8 +102,8 @@
 	--------------------------------------------------------*/
 	div#kopf div#titel {
 		position: absolute;
-		top: 223px; /*top: 14.6em;*/
-		left: 16.6em;
+		top: 258px;
+		left: 15.6em;
 		padding-right: 40px;
 	}
 	
@@ -129,8 +118,8 @@
 	--------------------------------------------------------*/
 	div#kopf div#breadcrumb {
 		position: absolute;
-		top: 190px;
-		left: 16.6em;
+		top: 230px;
+		left: 15.6em;
 		right: 20px;
 		overflow: hidden;  
 		text-overflow: ellipsis;  
@@ -185,13 +174,12 @@
 	/*  ------------------------------------------------------
 	KOPF MIT HAUPTMENUE
 	--------------------------------------------------------*/
-	div#kopf div#hauptmenu {
-		height: 25px;
+	/*div#kopf div#hauptmenu {
+		height: 3px;
 		white-space: nowrap;
-		background: #A4ABB3 url(/grafiken/techfak-2013/hauptmenue-bg.png) repeat-y;
-		margin-left: -27px;
-		padding-left: 27px;
+		background: #A4ABB3;
 		border-bottom: #fff 2px solid;
+		background: #66b32d url(../images/border_header.png) repeat-x;
 	}
 	
 	div#kopf div#hauptmenu h2 {
@@ -239,7 +227,7 @@
 	div#kopf div#hauptmenu ul li span {
 		background: #fff;
 		color: #6e7883;
-	}
+	}*/
 	/*  ------------------------------------------------------
 	KOPF MIT SPRUNGMARKEN
 	--------------------------------------------------------*/
@@ -304,8 +292,8 @@
 	div#kopf div#suche {
 		width: 12.6em;
 		position: absolute;
-		left: 33px;
-		top: 190px;
+		left: 15px;
+		top: 230px;
 	}
 	
 	div#kopf div#suche h2, 
@@ -357,9 +345,9 @@
 	MAIN
 	--------------------------------------------------------*/
 	div#main {
-		background: transparent;
+		border-top: 3px solid #66b32d;
+		/*background: url(../images/border_header.png) top left repeat-x;*/
 		padding: 0 0 20px 0;
-		border-top: 2px solid transparent;
 	}
 	
 	div#main:after {
@@ -377,7 +365,7 @@
 	div#menu {
 		float: left;
 		width: 12.6em;
-		margin: 70px 0 0 5px;
+		margin: 60px 0 0 15px;
 	}
 	
 	div#menu div#bereichsmenu  {
@@ -399,7 +387,6 @@
 	}
 	
 	ul#navigation li {
-/*		display: inline;*/
 		line-height:0.87em !important;
 	}
 	
@@ -413,9 +400,10 @@
 		font-size: 0.76em;
 		padding: 4px 10px;
 		text-decoration: none;
+		border-left: 5px solid transparent;
 		border-top: #fff 1px solid;
 		border-bottom: #fff 1px solid;
-		background: #dcdee1;
+		/*background: #dcdee1;*/
 		color:#003366;
 	}
 	
@@ -431,20 +419,31 @@
 		color: #fff;
 	}
 	
+	ul#navigation li.last a,
+	ul#navigation li.last span.aktiv {
+		border-bottom: none;
+	}
+	
 	ul#navigation li span.aktiv {
 		display: block;
 		font-size: 0.76em;
 		padding: 4px 10px;
 		text-decoration: none;
-		border-top: #fff 1px solid;
-		border-bottom: #003366 1px solid;
-		background: #adb4bb;
+		border-left: 5px solid transparent;
+		background: #66b32d;
 		color: #fff;
 	}
 	
+	
+	ul#navigation + li.first a,
+	ul#navigation li.first span.aktiv {
+		border-top: none;
+	}
+	
 	/* Fuer eine zweite Ebene */
+	
 	ul#navigation ul#hauptnavigation li a {
-		background: #dcdee1;
+		/*background: #dcdee1;*/
 		border-bottom: #fff 1px solid;
 		color: #003366;
 	}
@@ -458,7 +457,7 @@
 	
 	ul#navigation ul#hauptnavigation li span.aktiv, 
 	ul#navigation ul#hauptnavigation li a.aktiv {
-		background: #A4ABB3;
+		background: #66b32d;
 		border-top: #fff 1px solid;
 		border-bottom: #003366 1px solid;
 		color:#fff;
@@ -620,9 +619,8 @@
 	--------------------------------------------------------*/
 	div#footer { 	
 		clear: both;
-		padding: 10px 25px 10px 27px;
+		padding: 10px 25px;
 		background: #A4ABB3;
-		margin-left: -27px;
 	}
 	
 	div#footer h2 {
@@ -650,9 +648,6 @@
 	FOOTER - FOOTERINFOS - TECMENUE
 	--------------------------------------------------------*/
 	div#footer div#footerinfos div#tecmenu {
-		position: absolute;
-		top:111px;
-		right:0;
 		white-space: nowrap;
 		background: #fff;
 		padding: 0 10px 3px 0;
