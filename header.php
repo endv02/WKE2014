@@ -22,19 +22,18 @@ global $options;
       
       <header><div id="kopf">  <!-- begin: kopf -->   
 		  	<div id="logo">
-                		<p>
-				
+                						
 				<?php if ( ! is_home() ) { ?>
-                            <a href="<?php echo home_url( '/' ); ?>" title="<?php echo $options['default_text_title_home_backlink']; ?>" rel="home" class="logo">
-                            <?php } ?>                                                             
+				    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo $options['default_text_title_home_backlink']; ?>" rel="home" class="logo">
+				<?php } ?>                                                             
                                 <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
                             <?php                                
                             if ( ! is_home() ) { ?> </a>  <?php } ?>
-				</p>
+				
 				
 			</div>
 			<div id="titel">	 	
-        			<h1>?php the_title(); ?></h1> 
+        			<h1><?php the_title(); ?></h1> 
 			</div>       
 
 			<?php get_search_form(); ?>
@@ -89,7 +88,7 @@ global $options;
 		</div>  <!-- end: menu -->
 		<?php if ( is_active_sidebar( 'sidebar-area' ) ) { 
 		    dynamic_sidebar( 'sidebar-area' ); 
-		} ?>->
+		} ?>
 		             
 	    	<div id="content">  <!-- begin: content -->
 	        <a name="contentmarke" id="contentmarke"></a>       

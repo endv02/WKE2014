@@ -136,9 +136,9 @@ function wke2014_setup() {
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-                'primary' => __( 'Hauptnavigation', 'wke2014' ),
-                'targetmenu' => __( 'Linkmenu', 'wke2014' ),
-                'tecmenu' => __( 'Technische Navigation (Kontakt, Impressum, etc)', 'wke2014' ),
+                'primary'	=> __( 'Hauptnavigation', 'wke2014' ),
+                'targetmenu'	=> __( 'Linkmenu', 'wke2014' ),
+                'tecmenu'	=> __( 'Technische Navigation (Kontakt, Impressum, etc)', 'wke2014' ),
         ) );
 
 
@@ -156,6 +156,7 @@ endif;
 
 require( get_template_directory() . '/inc/widgets.php' );
 
+/* 
 function wke2014_scripts() {
     global $options;
     global $defaultoptions;
@@ -180,14 +181,9 @@ function wke2014_scripts() {
                    
 }
 add_action('wp_enqueue_scripts', 'wke2014_scripts');
+*/
 
-function wke2014_avatar ($avatar_defaults) {
-    global $defaultoptions;
-    $myavatar =  $defaultoptions['src-default-avatar']; 
-    $avatar_defaults[$myavatar] = "wke2014";
-    return $avatar_defaults;
-}
-add_filter( 'avatar_defaults', 'wke2014_avatar' );
+
 
 /* Refuse spam-comments on media */
 function filter_media_comment_status( $open, $post_id ) {
@@ -239,15 +235,31 @@ endif;
  */
 function wke2014_add_basemod_styles() {
     global $options;
-    if ($options['aktiv-basemod_siegel'])  {
-	wp_enqueue_style( 'basemod_siegel', $options['src-basemod-siegel'] );
+    
+    if ( !is_admin() ) { 
+	$theme  = wp_get_theme();
+	wp_register_style( 'wke2014', get_bloginfo( 'stylesheet_url' ), false, $theme['Version'] );
+	wp_enqueue_style( 'wke2014' );
+    }    
+    if ((isset($options['aktiv-basemod_zusatzinfo'])) && ($options['aktiv-basemod_zusatzinfo']==1)) {
+	wp_enqueue_style( 'basemod_zusatzinfo', $options['src_basemod_zusatzinfo'] );
     }
-    if (isset($options['basemods_colors']))  {
-	wp_enqueue_style( 'basemod_colors', get_template_directory_uri() . '/css/'.$options['basemods_colors'] );
+     if ((isset($options['active-basemod_links'])) && ($options['active-basemod_links']==1)) {
+	wp_enqueue_style( 'basemod_links', $options['src_basemod_links'] );
     }
+     if ((isset($options['aktiv-basemod_sidebar'])) && ($options['aktiv-basemod_sidebar']==1)) {
+	wp_enqueue_style( 'basemod_sidebar', $options['src_basemod_sidebar'] );
+    }
+     if ((isset($options['aktiv-basemod_mediaqueries'])) && ($options['aktiv-basemod_mediaqueries']==1)) {
+	wp_enqueue_style( 'basemod_mediaqueries', $options['src_basemod_mediaqueries'] );
+    }
+    
     
 }
 add_action( 'wp_enqueue_scripts', 'wke2014_add_basemod_styles' );
+
+
+
 
 /*
  * Breadcrumb
@@ -255,7 +267,7 @@ add_action( 'wp_enqueue_scripts', 'wke2014_add_basemod_styles' );
 
 function wke2014_breadcrumbs() {
   global $defaultoptions;
-  $delimiter = '<img width="20" height="9" alt=" &raquo; " src="img/breadcrumbarrow.gif">';
+  $delimiter = '<img width="20" height="9" alt=" &raquo; " src="'.$defaultoptions['src-breadcrumb-image'].'">';
   $home = __( 'Startseite', 'wke2014' ); // text for the 'Home' link
   $before = '<span class="current">'; // tag before the current crumb
   $after = '</span>'; // tag after the current crumb
@@ -400,11 +412,6 @@ function wke2014_comment( $comment, $args, $depth ) {
                 <div class="comment-details">
                     
                 <div class="comment-author vcard">
-                    <?php if ($options['aktiv-avatar']==1) {
-                        echo '<div class="avatar">';
-                        echo get_avatar( $comment, 48, $defaultoptions['src-default-avatar']); 
-                        echo '</div>';   
-                    } 
                     printf( __( '%s <span class="says">meinte am</span>', 'wke2014' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); 
                     ?>
                 </div><!-- .comment-author .vcard -->
@@ -464,7 +471,9 @@ function wke2014_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, 
    
   $sizeclass='';
   $leftbox = '';
-  
+  if ($showdatebox==0) {
+      $showdatebox=1;
+  }
   if (($showdatebox>0)  && ($showdatebox<5)) {
        $sizeclass = 'ym-column withthumb';      
        // Generate Thumb/Pic or Video first to find out which class we need
@@ -540,33 +549,10 @@ function wke2014_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, 
 	 * 5 = Nothing */
      
     if ($showdatebox<5) { 
-	echo '<div class="post-info ym-col1"><div class="ym-cbox">';
-	if ($showdatebox==0) {		 
-	      $num_comments = get_comments_number();           
-	      if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
-		echo '<div class="commentbubble">'; 	
-		    if ($num_comments>0) {
-		       comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
-		    } else {
-			// Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
-			// liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
-			// Woraround:
-			$link = get_comments_link();
-			echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
-		  }
-		 echo '</div>'; 
-	       }
-	       ?>
-	       <div class="cal-icon">
-			<span class="day"><?php the_time('j.'); ?></span>
-			<span class="month"><?php the_time('m.'); ?></span>
-			<span class="year"><?php the_time('Y'); ?></span>
-		</div>
-
-		<?php    
-            } else {	
-                echo $leftbox;
-            } 
+	    echo '<div class="post-info ym-col1"><div class="ym-cbox">';
+		
+            echo $leftbox;
+             
             echo '</div></div>';
             echo '<div class="post-entry ym-col3">';
             echo '<div class="ym-cbox';
@@ -582,8 +568,8 @@ function wke2014_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, 
                 </a>
 	    </h2></div>
 	 <?php }
-	   
-	 if (($showdatebox!=0) && ($showdateline==1)) { ?>
+	  
+	 if ($showdateline==1) { ?>
 	    <p class="pubdateinfo"><?php wke2014_post_pubdateinfo(0); ?></p>	  	  
 	 <?php }
 	   
@@ -600,80 +586,9 @@ function wke2014_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, 
 }
 endif;
 
-if ( ! function_exists( 'wke2014_post_datumsbox' ) ) :
-/**
- * Erstellung der Datumsbox
- */
-function wke2014_post_datumsbox() {
-    global $options;
-    echo '<div class="post-info">';
-          $num_comments = get_comments_number();           
-          if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
-         <div class="commentbubble"> 
-            <?php 
-                if ($num_comments>0) {
-                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
-                } else {
-                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
-                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
-                    // Woraround:
-                    $link = get_comments_link();
-                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
-              }
-            ?>
-          </div> 
-          <?php } ?>
 
-              <div class="cal-icon">
-                <span class="day"><?php the_time('j.'); ?></span>
-                <span class="month"><?php the_time('m.'); ?></span>
-                <span class="year"><?php the_time('Y'); ?></span>
-            </div>
-          <?php   
-     
-         
-    echo '</div>';
-    
-    
-}
-endif;
 
-if ( ! function_exists( 'wke2014_keywords' ) ) :
-/**
- * Fusszeile unter Artikeln: Ver&ouml;ffentlichungsdatum
- */
-function wke2014_keywords($maxlength = 140, $maxwords = 15 ) {
-    global $options;
-   
-    $csv_tags = '';
-    $tags = '';
-    if ($options['aktiv-autokeywords']) {   
 
-	$posttags = get_tags(array('number'=> $maxwords, 'orderby' => 'count', 'order'=> 'DESC'));
-	$tags = '';
-	    if (isset($posttags)) {
-		foreach($posttags as $tag) {
-		    $csv_tags .= $tag->name . ',';
-		}	
-		$tags = substr( $csv_tags,0,-2);
-	    }
-	if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
-	    $tags = $options['meta-keywords'].', '.$tags;
-	}
-    } else {
-	if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
-	    $tags = $options['meta-keywords'];
-	}	
-    }
-    if ((isset($tags)) && (strlen(trim($tags))>2 )) {
-	if (strlen(trim($tags))>$maxlength) {
-	    $tags = substr($tags,0,strpos($tags,",",$maxlength));
-	}	
-	echo '	<meta name="keywords" value="'.$tags.'">';
-    }
-   
-}
-endif;
 
 if ( ! function_exists( 'wke2014_post_pubdateinfo' ) ) :
 /**
@@ -747,3 +662,137 @@ function wke2014_change_mce_options($initArray) {
 }
 add_filter('tiny_mce_before_init', 'wke2014_change_mce_options');
 
+if ( ! function_exists( 'get_wke2014_firstpicture' ) ) :
+/*
+ * Erstes Bild aus einem Artikel auslesen, wenn dies vorhanden ist
+ */
+function get_wke2014_firstpicture(){
+    global $post;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $matches = array();
+    preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+   if ((is_array($matches)) && (isset($matches[1]))) {
+        $first_img = $matches[1];
+        if (!empty($first_img)){
+            $site_link =  home_url();  
+            $first_img = preg_replace("%$site_link%i",'', $first_img); 
+            $imagehtml = '<img src="'.$first_img.'" alt="" >';
+            return $imagehtml;    
+        }
+    }
+}
+endif;
+
+
+if ( ! function_exists( 'get_wke2014_firstvideo' ) ) :
+/*
+ * Erstes Bild aus einem Artikel auslesen, wenn dies vorhanden ist
+ */
+function get_wke2014_firstvideo($width = 300, $height = 169, $nocookie =1, $searchplain =1){
+    global $post;
+    ob_start();
+    ob_end_clean();
+    $matches = array();
+    preg_match('/src="([^\'"]*www\.youtube[^\'"]+)/i', $post->post_content, $matches);
+    if ((is_array($matches)) && (isset($matches[1]))) {
+        $entry = $matches[1];	
+        if (!empty($entry)){
+	    if ($nocookie==1) {
+		$entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
+	    }
+            $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" allowfullscreen></iframe>';
+            return $htmlout;    
+        }
+    }
+    // Schau noch nach YouTube-URLs die Plain im text sind. Hilfreich fuer
+    // Installationen auf Multisite ohne iFrame-Unterstützung
+    if ($searchplain==1) {
+       preg_match('/\b(https?:\/\/www\.youtube[\/a-z0-9\.\-\?=]+)/i', $post->post_content, $matches);
+        if ((is_array($matches)) && (isset($matches[1]))) {
+            $entry = $matches[1];	
+            if (!empty($entry)){
+                if ($nocookie==1) {
+                    $entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
+                }
+                $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" allowfullscreen></iframe>';
+                return $htmlout;    
+            }
+         }  
+    }
+}
+endif;
+
+if ( ! function_exists( 'get_wke2014_custom_excerpt' ) ) :
+/*
+ * Erstellen des Extracts
+ */
+function get_wke2014_custom_excerpt($length = 0, $continuenextline = 1, $removeyoutube = 1){
+  global $options;
+  global $post;
+      
+  if (has_excerpt()) {
+      return  get_the_excerpt();
+  } else {
+      $excerpt = get_the_content();
+       if (!isset($excerpt)) {
+          $excerpt = __( 'Kein Inhalt', 'wke2014' );
+        }
+  }
+  if ($length==0) {
+      $length = $options['teaser_maxlength'];
+  }
+  if ($removeyoutube==1) {
+   $excerpt = preg_replace('/^\s*([^\'"]*www\.youtube[\/a-z0-9\.\-\?=]+)/i','',$excerpt);
+   // preg_match('/^\s*([^\'"]*www\.youtube[\/a-z0-9\.\-\?=]+)/i', $excerpt, $matches);
+  }
+  
+  $excerpt = strip_shortcodes($excerpt);
+  $excerpt = strip_tags($excerpt); 
+  if (mb_strlen($excerpt)<5) {
+      $excerpt = __( 'Kein Inhalt', 'wke2014' );
+  }
+
+  if (mb_strlen($excerpt) >  $length) {
+    $the_str = mb_substr($excerpt, 0, $length);
+    $the_str .= "...";
+  }  else {
+      $the_str = $excerpt;
+  }
+  $the_str = '<p>'.$the_str;
+  if ($continuenextline==1) {
+      $the_str .= '<br>';
+  }
+  $the_str .= wke2014_continue_reading_link();
+  $the_str .= '</p>';
+  return $the_str;
+}
+endif;
+
+if ( ! function_exists( 'short_title' ) ) :
+/*
+ * Erstellen des Kurztitels
+ */
+function short_title($after = '...', $length = 6, $textlen = 10) {
+   $thistitle =   get_the_title();  
+   $mytitle = explode(' ', get_the_title());
+   if ((count($mytitle)>$length) || (mb_strlen($thistitle)> $textlen)) {
+       while(((count($mytitle)>$length) || (mb_strlen($thistitle)> $textlen)) && (count($mytitle)>1)) {
+           array_pop($mytitle);
+           $thistitle = implode(" ",$mytitle);           
+       }       
+       $morewords = 1;
+   } else {              
+       $morewords = 0;
+   }
+   if (mb_strlen($thistitle)> $textlen) {
+      $thistitle = mb_substr($thistitle, 0, $textlen);
+      $morewords = 1;     
+   }
+   if ($morewords==1) {
+       $thistitle .= $after;
+   }   
+   return $thistitle;
+}
+endif;

@@ -5,7 +5,7 @@ Author URI: http://www.rrze.uni-erlangen.de/
 Author: Wolfgang Wiese, Barbara Bothe
 Author URI: http://www.rrze.uni-erlangen.de/
 Description: Wordpress-Theme for the german event Webkongress Erlangen 2014
-Version: 1.0
+Version: 1.1
 License: GNU General Public License
 License URI: license.txt
 
@@ -21,10 +21,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* import screen layout | Screen-Layout einbinden */
 @import url(css/basemod.css);
 @import url(css/content.css);
-@import url(css/basemod_zusatzinfo.css);
-@import url(css/basemod_sidebar.css);
-@import url(css/basemod_links.css);
-@import url(css/mediaqueries.css);
+
 
 /* import print layout | Print-Layout einbinden */
 @import url(css/print.css);
