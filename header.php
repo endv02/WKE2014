@@ -22,20 +22,31 @@ global $options;
       
       <header><div id="kopf">  <!-- begin: kopf -->   
 		  	<div id="logo">
-                						
+                		<p>				
 				<?php if ( ! is_home() ) { ?>
 				    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo $options['default_text_title_home_backlink']; ?>" rel="home" class="logo">
 				<?php } ?>                                                             
-                                <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
+                                <img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>">
                             <?php                                
                             if ( ! is_home() ) { ?> </a>  <?php } ?>
-				
+				</p>
 				
 			</div>
 			<div id="titel">	 	
         			<h1><?php the_title(); ?></h1> 
 			</div>       
+			<?php if ( is_active_sidebar( 'headerbox-area' ) ) { 
+			    dynamic_sidebar( 'headerbox-area' ); 
+			 } else { ?>
+			     <div id="header-box">
+				<div class="wrapper">
+				    <p class="datum">20.03.<br />+ 21.03.</p>
+				    <p class="titel">Webkongress <br /> Erlangen <span class="jahr">2014</span></p>
+				</div>
+			    </div>
+			 <?php } ?>
 
+	      
 			<?php get_search_form(); ?>
 		 
         <div id="breadcrumb">
@@ -68,16 +79,16 @@ global $options;
 				  
 			    <?php 
                                 if ( has_nav_menu( 'primary' ) ) {
-                                    wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
+                                    wp_nav_menu( array( 'container' => 'ul', 'container_id' => 'navigation', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
                                 } else { ?>
-                                    <div class="menu-header">
-                                        <ul id="menu-mainmenu" class="menu">      
+                                    
+                                        <ul id="navigation" class="menu">      
                                             <?php  wp_page_menu( array(
                                         'sort_column' => 'menu_order, post_title',
                                         'echo'        => 1,
                                         'show_home'   => 1 ) ); ?>          
                                         </ul>
-                                    </div>
+                                    
                                 <?php  } ?>
 				
 				

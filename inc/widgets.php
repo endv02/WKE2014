@@ -27,6 +27,19 @@ function wke2014_widgets_init() {
                 'before_title' => '<h2>',
                 'after_title' => '</h2>',
         ) );
+	
+	// Zusatzinfo (Footer)
+        register_sidebar( array(
+                'name' => __( 'Headerbox', 'wke2014' ),
+                'id' => 'headerbox-area',
+                'description' => __( 'Box mit Zusatzinfos rechts oben im Banner', 'wke2014' ),
+                'before_widget' => '<div id="header-box"><div class="wrapper">',
+                'after_widget' => '</div></div>',
+                'before_title' => '<p class="titel">',
+                'after_title' => '</p>',
+        ) );
+
+	
 	// Zusatzinfo (Footer)
         register_sidebar( array(
                 'name' => __( 'Inhaltsinfo', 'wke2014' ),

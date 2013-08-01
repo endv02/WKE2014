@@ -10,7 +10,7 @@ $defaultoptions = array(
     'thumbnail-width'		    => 624,
     'thumbnail-height'		    => 9999,
     'content-width'                 => 625,  
-   
+    'default_text_title_home_backlink'	=>  __( 'Zur&uuml;ck zur Startseite', 'wke2014' ),
     'aktiv_menueselectlist'	    => 1,
     'src_basemod_zusatzinfo'	    => get_template_directory_uri() . '/css/basemod_zusatzinfo.css',
     'aktiv-basemod_zusatzinfo'	    => 1,    
@@ -22,10 +22,10 @@ $defaultoptions = array(
     'aktiv-basemod_mediaqueries'    => 1,
 
     
-    'logo'			    => get_template_directory_uri() . '/images/logo-techfak.png',
-    'logo-width'		    => 360,
-    'logo-height'		    => 135,
-    'background-header-color'	    => 'e6e6e6',
+    'logo'			    => get_template_directory_uri() . '/images/wke_logo_2014_gruen.png',
+    'logo-width'		    => 170,
+    'logo-height'		    => 106,
+    'background-header-color'	    => 'ffffff',
     'background-header-image'	    => '',
     
     'login_errors'		    => 0,
