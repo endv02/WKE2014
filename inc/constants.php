@@ -111,7 +111,7 @@ $setoptions = array(
 	      'aktiv-basemod_zusatzinfo' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Zusatzinfo', 'wke2014'),
-                  'label'   => __( 'Zusatinfo anzeigen','wke2014' ),
+                  'label'   => __( 'Zusatzinfo anzeigen','wke2014' ),
                   'default' => $defaultoptions['aktiv-basemod_zusatzinfo'],
               ),
 	      'aktiv-basemod_links' => array(
@@ -126,6 +126,18 @@ $setoptions = array(
                   'label'   => __( 'Logo im blauen Stil aktivieren','wke2014' ),
                   'default' => $defaultoptions['aktiv-basemod_blau'],
               ),  
+	      'headerbox-datum' => array(
+                  'type'    => 'html',
+                  'title'   => __( 'Datumsangabe', 'wke2014'),
+                  'label'   => __( 'Datum des Kongresses in Box rechts anzeigen','wke2014' ),
+                  'default' => $defaultoptions['headerbox-datum'],
+              ), 
+	      'headerbox-title' => array(
+                  'type'    => 'html',
+                  'title'   => __( 'Titel', 'wke2014'),
+                  'label'   => __( 'Subtitel in Box rechts anzeigen','wke2014' ),
+                  'default' => $defaultoptions['headerbox-title'],
+              ), 
 	      
 	     
 	     
