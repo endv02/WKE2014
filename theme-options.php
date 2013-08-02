@@ -14,8 +14,8 @@ function theme_options_init(){
  * Load up the menu page
  */
 function theme_options_add_page() {
-	add_theme_page( __( 'Theme Techfak 2013 Optionen', 'wke2014' ),
-                        __( 'Theme Techfak 2013  Optionen', 'wke2014' ), 
+	add_theme_page( __( 'Theme WKE2014 Optionen', 'wke2014' ),
+                        __( 'Theme WKE2014  Optionen', 'wke2014' ), 
                        'edit_theme_options', 'theme_options', 'theme_options_do_page' );
                           
 }

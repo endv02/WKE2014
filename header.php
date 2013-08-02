@@ -9,7 +9,7 @@ global $options;
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width" />
-    <title><?php wp_title( ); ?></title>
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php wp_head(); ?>
@@ -37,11 +37,11 @@ global $options;
 			</div>       
 			<?php if ( is_active_sidebar( 'headerbox-area' ) ) { 
 			    dynamic_sidebar( 'headerbox-area' ); 
-			 } else { ?>
+			 } elseif (isset($options['headerbox-datum']) && isset($options['headerbox-title'])) { ?>
 			     <div id="header-box">
 				<div class="wrapper">
-				    <p class="datum">20.03.<br />+ 21.03.</p>
-				    <p class="titel">Webkongress <br /> Erlangen <span class="jahr">2014</span></p>
+				    <p class="datum"><?php echo $options['headerbox-datum']; ?></p>
+				    <p class="titel"><?php echo $options['headerbox-title']; ?></p>
 				</div>
 			    </div>
 			 <?php } ?>
@@ -65,7 +65,6 @@ global $options;
         </div>
 	<?php if ( has_nav_menu( 'targetmenue' ) ) { ?>
 	    <nav id="zielgruppen-menue" class="zielgruppen-menue" role="navigation">
-		<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'wke2014' ); ?>"><?php _e( 'Skip to content', 'wke2014' ); ?></a>
 		<?php wp_nav_menu( array( 'theme_location' => 'targetmenue', 'fallback_cb' => '', 'depth' => 1 ) );?>
 	    </nav><!-- #target-navigation -->
          <?php } ?> 	  

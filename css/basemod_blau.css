@@ -1,0 +1,52 @@
+@media screen, projection {
+    
+	
+    #kopf #header-box .jahr {
+	color: #0094D4;
+    }
+	
+    /* Navigation erste + zweite Ebene */	
+    ul#navigation li a,
+    ul#navigation li span {
+	border-left: 3px solid #1559a6;
+	border-bottom: 1px solid #1559a6;
+    }
+    ul#navigation li a:hover,
+    ul#navigation li a:focus,
+    ul#navigation li a:active,
+    ul#navigation li span.aktiv,
+    ul#navigation li.on a.aktiv {
+	background: #1559a6;
+    }
+    /* Navigation dritte Ebene */	
+    ul#navigation ul ul li a, 
+    ul#navigation ul ul li span {
+	border-left-color: #0094D4;
+	border-bottom-color: #0094D4;
+    }
+    ul#navigation ul ul li a:hover,
+    ul#navigation ul ul li a:focus,
+    ul#navigation ul ul li a:active {
+	background: #0094D4;
+    }
+    ul#navigation li.on ul li a.aktiv {
+	background: #0094D4;
+    }
+    ul#navigation ul ul li span.aktiv {
+	background: #0094D4;
+    }
+    /* Navigation vierte Ebene */	
+    ul#navigation ul ul ul li a:hover,
+    ul#navigation ul ul ul li a:focus,
+    ul#navigation ul ul ul li a:active,
+    ul#navigation ul ul ul li span.aktiv {
+	background: #e5f7ff;
+    }
+	
+    div#main {
+	border-top: 3px solid #0094D4;
+    }
+    
+    
+}
+    

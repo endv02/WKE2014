@@ -38,11 +38,15 @@ function wke2014_setup() {
         // Add default posts and comments RSS feed links to head
         add_theme_support( 'automatic-feed-links' );
                
-  
+	if (isset($options['aktiv-basemod_blau']) && ($options['aktiv-basemod_blau']==1)) {
+	    $logo = $defaultoptions['logo_blau'];
+	} else {	
+	    $logo = $defaultoptions['logo_gruen'];
+	}
         $args = array(
             'width'         => 0,
             'height'        => 0,
-            'default-image' => $defaultoptions['logo'],
+            'default-image' => $logo,
             'uploads'       => true,
             'random-default' => false,                      
             'flex-height' => true,
@@ -244,15 +248,17 @@ function wke2014_add_basemod_styles() {
     if ((isset($options['aktiv-basemod_zusatzinfo'])) && ($options['aktiv-basemod_zusatzinfo']==1)) {
 	wp_enqueue_style( 'basemod_zusatzinfo', $options['src_basemod_zusatzinfo'] );
     }
-     if ((isset($options['active-basemod_links'])) && ($options['active-basemod_links']==1)) {
+     if ((isset($options['aktiv-basemod_links'])) && ($options['aktiv-basemod_links']==1)) {
 	wp_enqueue_style( 'basemod_links', $options['src_basemod_links'] );
     }
      if ((isset($options['aktiv-basemod_sidebar'])) && ($options['aktiv-basemod_sidebar']==1)) {
 	wp_enqueue_style( 'basemod_sidebar', $options['src_basemod_sidebar'] );
     }
-     if ((isset($options['aktiv-basemod_mediaqueries'])) && ($options['aktiv-basemod_mediaqueries']==1)) {
-	wp_enqueue_style( 'basemod_mediaqueries', $options['src_basemod_mediaqueries'] );
+      if ((isset($options['aktiv-basemod_blau'])) && ($options['aktiv-basemod_blau']==1)) {
+	wp_enqueue_style( 'basemod_blau', $options['src_basemod_blau'] );
+	
     }
+   
     
     
 }
