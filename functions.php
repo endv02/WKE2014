@@ -268,6 +268,10 @@ function wke2014_add_basemod_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'wke2014_add_basemod_styles' );
 
+function wke2014_admin_head() {
+    echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/admin.css" />'; 
+}
+add_action('admin_head', 'wke2014_admin_head');
 
 
 
