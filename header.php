@@ -78,7 +78,8 @@ global $options;
 				  
 			    <?php 
                                 if ( has_nav_menu( 'primary' ) ) {
-                                    wp_nav_menu( array( 'container' => 'ul', 'container_id' => 'navigation', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
+                                    wp_nav_menu( array( 'container' => 'ul',  'menu_class'  => 'menu',
+					'menu_id'         => 'navigation',  'theme_location' => 'primary', 'walker'  => '' ));      
                                 } else { ?>
                                     
                                         <ul id="navigation" class="menu">      
@@ -97,7 +98,9 @@ global $options;
 			 } ?>
 		</div>  <!-- end: menu -->
 		<?php if ( is_active_sidebar( 'sidebar-area' ) ) { 
+		    echo '<aside><div id="sidebar">  <!-- begin: sidebar -->';
 		    dynamic_sidebar( 'sidebar-area' ); 
+		    echo '</div></aside>';
 		} ?>
 		             
 	    	<div id="content">  <!-- begin: content -->

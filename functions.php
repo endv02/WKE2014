@@ -141,7 +141,7 @@ function wke2014_setup() {
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
                 'primary'	=> __( 'Hauptnavigation', 'wke2014' ),
-                'targetmenu'	=> __( 'Linkmenu', 'wke2014' ),
+        //        'targetmenu'	=> __( 'Zielgruppenmenu', 'wke2014' ),
                 'tecmenu'	=> __( 'Technische Navigation (Kontakt, Impressum, etc)', 'wke2014' ),
         ) );
 
@@ -802,3 +802,35 @@ function short_title($after = '...', $length = 6, $textlen = 10) {
    return $thistitle;
 }
 endif;
+
+
+
+class My_Walker_Nav_Menu extends Walker_Nav_Menu {
+    /**
+     * Start the element output.
+     *
+     * @param  string $output Passed by reference. Used to append additional content.
+     * @param  object $item   Menu item data object.
+     * @param  int $depth     Depth of menu item. May be used for padding.
+     * @param  array $args    Additional strings.
+     * @return void
+     */
+    public function start_el( &$output, $item, $depth, $args ) {
+        if ( '-' === $item->title )
+        {
+            // you may remove the <hr> here and use plain CSS.
+            $output .= '<li class="menu_separator"><hr>';
+        } else{
+            parent::start_el( $output, $item, $depth, $args );
+        }
+    }
+    /* Klasse has_children einfuegen */
+    public function display_element($el, &$children, $max_depth, $depth = 0, $args, &$output){
+        $id = $this->db_fields['id'];
+
+        if(isset($children[$el->$id]))
+            $el->classes[] = 'has_children';
+
+        parent::display_element($el, $children, $max_depth, $depth, $args, $output);
+    }
+}

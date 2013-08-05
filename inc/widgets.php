@@ -84,8 +84,8 @@ class FAULinkliste_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'FAULinkliste_Widget', // Base ID
-                        __( 'Piraten Linkliste', 'wke2014' ),
-			array( 'description' => __( 'Linkliste mit verschiedenen Gliederungen und Bereichen der Partei', 'wke2014' ), ) // Args
+                        __( 'FAU  Linkliste', 'wke2014' ),
+			array( 'description' => __( 'Linkliste mit verschiedenen Webangeboten des RRZE und der FAU', 'wke2014' ), ) // Args
 		);
 	}
 

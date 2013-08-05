@@ -13,11 +13,11 @@
        <footer><div id="footer">  <!-- begin: footer -->         			
            <div id="footerinfos">  <!-- begin: footerinfos -->
 
-	       <?php if ( has_nav_menu( 'tecmenue' ) ) { ?>
+	       <?php if ( has_nav_menu( 'tecmenu' ) ) { ?>
 	       <nav role="navigation">
 			<div id="tecmenu">   <!-- begin: tecmenu -->	
 		        	<h2 class="skip"><a name="hilfemarke" id="hilfemarke">Technisches Menu</a></h2>		
-					<?php wp_nav_menu( array( 'theme_location' => 'tecmenue', 'fallback_cb' => '' ) );?>
+					<?php wp_nav_menu( array( 'theme_location' => 'tecmenu', 'fallback_cb' => '' ) );?>
 	        	</div>  <!-- end: tecmenu -->	
 		</nav>
 	       <?php } ?>
