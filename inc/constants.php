@@ -21,7 +21,10 @@ $defaultoptions = array(
     'aktiv-basemod_blau'	    => 1,
     'src_socialmediabuttons'	    => get_template_directory_uri() . '/css/basemod_socialmediaicons.css',   
     'aktiv-socialmediabuttons'	    => 1,
-
+    'aktiv-autoren'                 => 1,
+    'aktiv-commentreplylink'        => 0,
+    'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'wke2014' ). '</p>',
+    'disclaimer_post'               => '',
     
     'logo'			    => get_template_directory_uri() . '/images/wke_logo_2014_gruen.png',
     'logo_gruen'		    => get_template_directory_uri() . '/images/wke_logo_2014_gruen.png',
@@ -264,7 +267,12 @@ $setoptions = array(
                   'label'   => __( 'Subtitel in Box rechts anzeigen','wke2014' ),
                   'default' => $defaultoptions['headerbox-title'],
               ), 
-	      
+	      'aktiv-autoren' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Autoren anzeigen', 'wke2014' ),
+                  'label'   => __( 'Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken.', 'wke2014' ),
+                  'default' => $defaultoptions['aktiv-autoren'],
+              ),
 	     
 	     
                

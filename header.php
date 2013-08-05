@@ -32,8 +32,8 @@ global $options;
 				</p>
 				
 			</div>
-			<div id="titel">	 	
-        			<h1><?php the_title(); ?></h1> 
+			<div id="titel">
+				<h1><?php wke2014_contenttitle(); ?></h1> 
 			</div>       
 			<?php if ( is_active_sidebar( 'headerbox-area' ) ) { 
 			    dynamic_sidebar( 'headerbox-area' ); 

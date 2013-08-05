@@ -376,6 +376,111 @@ function wke2014_breadcrumbs() {
   }
 }
 
+function wke2014_contenttitle () {
+     global $defaultoptions;
+  $before = ''; 
+  $after = ''; 
+ $delimiter = ': ';
+ 
+  if ( !is_home() && !is_front_page() || is_paged() ) {
+    global $post;
+    $homeLink = home_url('/');
+ 
+    if ( is_category() ) {
+      global $wp_query;
+      $cat_obj = $wp_query->get_queried_object();
+      $thisCat = $cat_obj->term_id;
+      $thisCat = get_category($thisCat);
+      $parentCat = get_category($thisCat->parent);
+      if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
+      echo $before . __( 'Artikel der Kategorie ', 'wke2014' ). '"' . single_cat_title('', false) . '"' . $after;
+ 
+    } elseif ( is_day() ) {
+      echo $before . get_the_time('d') . $after;
+ 
+    } elseif ( is_month() ) {
+      echo $before . get_the_time('F') . $after;
+ 
+    } elseif ( is_year() ) {
+      echo $before . get_the_time('Y') . $after;
+ 
+    } elseif ( is_single() && !is_attachment() ) {
+        echo $before . get_the_title() . $after;
+    } elseif ( !is_single() && !is_page() && !is_search() && get_post_type() != 'post' && !is_404() ) {
+      $post_type = get_post_type_object(get_post_type());
+      echo $before . $post_type->labels->singular_name . $after; 
+    } elseif ( is_attachment() ) {
+      echo $before . get_the_title() . $after;
+ 
+    } elseif ( is_page() && !$post->post_parent ) {
+      echo $before . get_the_title() . $after;
+ 
+    } elseif ( is_page() && $post->post_parent ) {
+      echo $before . get_the_title() . $after; 
+    } elseif ( is_search() ) {
+      echo $before . __( 'Suche nach ', 'wke2014' ).'"' . get_search_query() . '"' . $after;
+ 
+    } elseif ( is_tag() ) {
+      echo $before . __( 'Artikel mit Schlagwort ', 'wke2014' ). '"' . single_tag_title('', false) . '"' . $after;
+ 
+    } elseif ( is_author() ) {
+       global $author;
+      $userdata = get_userdata($author);
+      echo $before . __( 'Artikel von ', 'wke2014' ). $userdata->display_name . $after;
+    } elseif ( is_404() ) {
+      echo $before . '404' . $after;
+    } else {
+	 echo $before . get_the_title() . $after;
+    }
+  }
+}
+
+if ( ! function_exists( 'wke2014_filter_wp_title' ) ) :   
+/*
+ * Sets the title
+ */    
+function wke2014_filter_wp_title( $title, $separator ) {
+        // Don't affect wp_title() calls in feeds.
+        if ( is_feed() )
+                return $title;
+
+        // The $paged global variable contains the page number of a listing of posts.
+        // The $page global variable contains the page number of a single post that is paged.
+        // We'll display whichever one applies, if we're not looking at the first page.
+        global $paged, $page;
+
+        if ( is_search() ) {
+                // If we're a search, let's start over:
+                $title = sprintf( __( 'Suchergebnisse f&uuml;r %s', 'wke2014' ), '"' . get_search_query() . '"' );
+                // Add a page number if we're on page 2 or more:
+                if ( $paged >= 2 )
+                        $title .= " $separator " . sprintf( __( 'Seite %s', 'wke2014' ), $paged );
+                // Add the site name to the end:
+                $title .= " $separator " . get_bloginfo( 'name', 'display' );
+                // We're done. Let's send the new title back to wp_title():
+                return $title;
+        }
+
+        // Otherwise, let's start by adding the site name to the end:
+        $title .= get_bloginfo( 'name', 'display' );
+
+        // If we have a site description and we're on the home/front page, add the description:
+        $site_description = get_bloginfo( 'description', 'display' );
+        if ( $site_description && ( is_home() || is_front_page() ) )
+                $title .= " $separator " . $site_description;
+
+        // Add a page number if necessary:
+        if ( $paged >= 2 || $page >= 2 )
+                $title .= " $separator " . sprintf( __( 'Seite %s', 'wke2014' ), max( $paged, $page ) );
+
+        // Return the new title to wp_title():
+        return $title;
+}
+endif;
+add_filter( 'wp_title', 'wke2014_filter_wp_title', 10, 2 );
+
+
+
 
 function wke2014_excerpt_length( $length ) {
 	global $defaultoptions;
