@@ -97,11 +97,9 @@ global $options;
 			    dynamic_sidebar( 'kurzinfo-area' ); 
 			 } ?>
 		</div>  <!-- end: menu -->
-		<?php if ( is_active_sidebar( 'sidebar-area' ) ) { 
-		    echo '<aside><div id="sidebar">  <!-- begin: sidebar -->';
-		    dynamic_sidebar( 'sidebar-area' ); 
-		    echo '</div></aside>';
-		} ?>
+
+		<?php get_sidebar(); ?>
+		
 		             
 	    	<div id="content">  <!-- begin: content -->
 	        <a name="contentmarke" id="contentmarke"></a>       

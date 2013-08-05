@@ -776,6 +776,55 @@ function get_wke2014_custom_excerpt($length = 0, $continuenextline = 1, $removey
 }
 endif;
 
+
+if ( ! function_exists( 'get_wke2014_socialmediaicons' ) ) :
+/**
+ * Displays Social Media Icons
+ */
+function get_wke2014_socialmediaicons() {
+    global $options;
+    global $default_socialmedia_liste;
+    $zeigeoption = $options['aktiv-socialmediabuttons'];
+    
+    if ($zeigeoption != 1) {
+	return;
+    }
+    $result = '';
+    $links = '';
+    $result .= '<div class="socialmedia_iconbar">';
+    $result .=  '<ul class="socialmedia">';       
+    foreach ( $default_socialmedia_liste as $entry => $listdata ) {                
+        $value = '';
+        $active = 0;
+        if (isset($options['sm-list'][$entry]['content'])) {
+                $value = $options['sm-list'][$entry]['content'];
+        } else {
+                $value = $default_socialmedia_liste[$entry]['content'];
+         }
+         if (isset($options['sm-list'][$entry]['active'])) {
+                $active = $options['sm-list'][$entry]['active'];
+        }        
+        if (($active ==1) && ($value)) {
+            $links .= '<li><a class="icon_'.$entry.'" href="'.$value.'">';
+            $links .=  $listdata['name'].'</a></li>';
+	    $links .= "\n";
+        }
+    }
+    
+    if (strlen($links) > 1) {
+	$result .= $links;
+	$result .= '</ul>';
+	$result .= '</div>';	
+	echo $result;
+    } else {
+	return;
+    }
+
+    
+}
+endif;
+
+
 if ( ! function_exists( 'short_title' ) ) :
 /*
  * Erstellen des Kurztitels

@@ -114,7 +114,7 @@ class FAULinkliste_Widget extends WP_Widget {
                   } else {
                         echo $before_title.$title.$after_title;
                   }
-                  echo '<ul>';
+                  echo '<ul class="FAULinkliste">';
                   
                   foreach($default_footerlink_liste[$bereich]['sublist'] as $i => $value) {
                        echo '<li><a href="'.$value.'">';                                                                                                        
@@ -177,7 +177,7 @@ class FAULinkliste_Widget extends WP_Widget {
                 }  
                 echo "</select><br>\n";                                   
                 echo "\t\t\t";
-                echo "<label for=\"".$this->get_field_name( 'bereich' )."\">".__( 'Bereich oder Gliederung ausw&auml;hlen.', 'wke2014' )."</label>\n"; 
+                echo "<label for=\"".$this->get_field_name( 'bereich' )."\">".__( 'Bereich ausw&auml;hlen.', 'wke2014' )."</label>\n"; 
       
 	}
 
