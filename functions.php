@@ -382,10 +382,12 @@ function wke2014_breadcrumbs() {
 
 function wke2014_contenttitle () {
      global $defaultoptions;
+     global $options;
   $before = ''; 
   $after = ''; 
  $delimiter = ': ';
- 
+   $home = $options['text-startseite']; // text for the 'Home' link
+
   if ( !is_home() && !is_front_page() || is_paged() ) {
     global $post;
     $homeLink = home_url('/');
@@ -436,6 +438,8 @@ function wke2014_contenttitle () {
     } else {
 	 echo $before . get_the_title() . $after;
     }
+  } elseif (is_home() || is_front_page()) {
+      echo $before .$home. $after;
   }
 }
 
