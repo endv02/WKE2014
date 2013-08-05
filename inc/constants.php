@@ -80,7 +80,8 @@ $defaultoptions = array(
     
     'headerbox-datum'		    => '20.03.<br />+ 21.03.',
     'headerbox-title'		    => 'Webkongress <br /> Erlangen <span class="jahr">2014</span>',
-        
+       
+    'default_footerlink_key'	    => 'Fakultaeten',
 );
 
 
@@ -277,6 +278,130 @@ $setoptions = array(
    )
 );
 
+
+/*
+ * Liste Social Media 
+ */
+$default_socialmedia_liste = array(
+    'delicious' => array(
+	'name' => 'Delicious',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'diaspora' => array(
+	'name' => 'Diaspora',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'facebook' => array(
+	'name' => 'Facebook',
+	'content'  => '',
+	'active' => 1,
+    ),
+    'twitter' => array(
+	'name' => 'Twitter',
+	'content'  => 'https://twitter.com/#!/wke',
+	'active' => 1,
+    ),
+    'gplus' => array(
+	'name' => 'Google Plus',
+	'content'  => '',
+	'active' => 1,
+    ),
+    'flattr' => array(
+	'name' => 'Flattr',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'flickr' => array(
+	'name' => 'Flickr',
+	'content'  => 'http://flickr.com/photos/tags/wke2010/',
+	'active' => 0,
+    ),
+  
+    'identica' => array(
+	'name' => 'Identica',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'itunes' => array(
+	'name' => 'iTunes',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'skype' => array(
+	'name' => 'Skype',
+	'content'  => '',
+	'active' => 0,
+    ),
+    
+    'youtube' => array(
+	'name' => 'YouTube',
+	'content'  => '',
+	'active' => 1,
+    ),
+    'xing' => array(
+	'name' => 'Xing',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'tumblr' => array(
+	'name' => 'Tumblr',
+	'content'  => '',
+	'active' => 1,
+    ),
+    'github' => array(
+	'name' => 'GitHub',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'appnet' => array(
+	'name' => 'App.Net',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'feed' => array(
+	'name' => 'RSS Feed',
+	'content'  => get_bloginfo( 'rss2_url' ),
+	'active' => 1,
+    ),
+); 
+
+/* 
+ * Linkliste fuer Footer und Widgets
+ */
+ $default_footerlink_liste = array(
+     __( 'Fakultaeten', 'wke2014' )  => array(
+        'title' => __( 'Friedrich-Alexander-Universit&auml;t Erlangen-N&uuml;rnberg', 'wke2014' ),
+        'url'   => 'http://www.fau.de',
+        'sublist'   => array(
+            __('Philosophische Fakult&auml;t und Fachbereich Theologie', 'wke2014' ) => 'http://www.phil.faude/',
+            __('Rechts- und Wirtschaftswissenschaftliche Fakult&auml;t', 'wke2014' ) => 'http://www.rw.fau.de/',
+            __('Medizinische Fakult&auml;t', 'wke2014' ) => 'http://www.med.fau.de/',
+            __('Naturwissenschaftliche Fakult&auml;t', 'wke2014' ) => 'http://www.natfak.fau.de/',
+            __('Technische Fakult&auml;t', 'wke2014' ) => 'http://www.techfak.fau.de/',
+
+        )
+     ),
+     __( 'RRZE', 'wke2014' )  => array(
+        'title' => __( 'Regioanles Rechenzentrum Erlangen', 'wke2014' ),
+        'url'   => 'http://www.rrze.fau.de',
+        'sublist'   => array(
+	    
+            __('Service-Theke', 'wke2014' ) => 'http://www.rrze.fau.de/hilfe/service-theke',
+            __('Informationszentrum Innenstadt', 'wke2014' ) => 'http://www.izi.rrze.fau.de/',
+            __('Informationszentrum N&uuml;rnberg', 'wke2014' ) => 'http://www.zzn.rrze.fau.de/',
+            __('Informationszentrum Halbmondstrasse', 'wke2014' ) => 'http://www.izh.rrze.fau.de/',
+
+	    __('Blogdienst', 'wke2014' ) => 'http://blogs.fau.de/',
+	    __('Videoportal', 'wke2014' ) => 'http://video.fau.de/',
+	    __('IDM', 'wke2014' ) => 'https://www.idm.fau.de/',
+	    __('Aktuelle Meldungen', 'wke2014' ) => 'http://blogs.fau.de/rrze/',
+	    
+	    
+        )
+     ),
+);
 
 
 ?>
