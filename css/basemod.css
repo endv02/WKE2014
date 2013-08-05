@@ -144,7 +144,7 @@
 	--------------------------------------------------------*/
 	div#kopf div#titel {
 		position: absolute;
-		top: 258px;
+		top: 265px;
 		left: 15.6em;
 		padding-right: 40px;
 	}
@@ -364,7 +364,7 @@
 		width:1px;
 	}	
 	
-	/* Fuer eine erste + zweite Ebene */	
+	/* Fuer eine erste Ebene */	
 	ul#navigation {
 		list-style-type: none;
 		padding: 0 0 10px 0;
@@ -378,8 +378,7 @@
 		font-style: italic;
 	}
 	
-	ul#navigation li a,
-	ul#navigation li span {
+	ul#navigation li a {
 		display: block;
 		font-size: 0.76em;
 		padding: 4px 10px 4px 5px;
@@ -392,19 +391,39 @@
 	
 	ul#navigation li a:hover,
 	ul#navigation li a:focus,
-	ul#navigation li a:active,
-	ul#navigation li span.aktiv,
-	ul#navigation li.on a.aktiv {
+	ul#navigation li a:active {
 	    background: #66b32d;
 	    color: #fff;
 	}
 	
+	ul#navigation li.current-menu-item > a,
+	ul#navigation li.current-page-ancestor > a,
+	ul#navigation li.current-menu-ancestor > a {
+	    background: #66b32d;
+	    color: #fff;  
+	}
+	
+	/* Fuer eine zweite Ebene */	
+	ul#navigation ul.sub-menu {
+	    margin-left: 10px;
+	}
+	
+	ul#navigation li a:hover,
+	ul#navigation li a:focus,
+	ul#navigation li a:active {
+	    background: #66b32d;
+	    color: #fff;
+	}
+	
+	ul#navigation li.current-menu-item > a {
+	    background: #66b32d;
+	    color: #fff;  
+	}
+	
 	/* Fuer eine dritte Ebene */	
-	ul#navigation ul ul li a, 
-	ul#navigation ul ul li span {
+	ul#navigation ul ul li a {
 	    border-left-color: #76cc36;
 	    border-bottom-color: #76cc36;
-	    margin-left: 10px;
 	    margin-top: 0;
 	}
 	ul#navigation ul ul li a:hover,
@@ -412,24 +431,23 @@
 	ul#navigation ul ul li a:active {
 	    background: #76cc36;
 	}
-	ul#navigation li.on ul li a.aktiv {
+	ul#navigation ul ul li.current-menu-item > a,
+	ul#navigation ul ul li.current-page-ancestor > a,
+	ul#navigation ul ul li.current-menu-ancestor > a{
 	    background: #76cc36;
-	}
-	ul#navigation ul ul li span.aktiv {
-	    background: #76cc36;
+	    color: #fff;  
 	}
 	
 	/* Fuer eine vierte Ebene */	
 	
 	ul#navigation ul ul ul li a, 
 	ul#navigation ul ul ul li span {
-	    margin-left: 25px;
+	    margin-left: 45px;
 	    
 	}
 	ul#navigation ul ul ul li a:hover,
 	ul#navigation ul ul ul li a:focus,
-	ul#navigation ul ul ul li a:active,
-	ul#navigation ul ul ul li span.aktiv {
+	ul#navigation ul ul ul li a:active {
 	    background: #dbf2cb;
 	    color: #036;
 	}

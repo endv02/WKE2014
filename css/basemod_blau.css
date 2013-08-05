@@ -6,27 +6,31 @@
     }
 	
     /* Navigation erste + zweite Ebene */	
-    ul#navigation li a,
-    ul#navigation li span {
+    ul#navigation li a {
 	border-left: 3px solid #1559a6;
 	border-bottom: 1px solid #1559a6;
     }
     ul#navigation li a:hover,
     ul#navigation li a:focus,
     ul#navigation li a:active,
-    ul#navigation li span.aktiv,
-    ul#navigation li.on a.aktiv {
+    ul#navigation li.current-menu-item > a,
+    ul#navigation li.current-page-ancestor > a,
+    ul#navigation li.current-menu-ancestor > a  {
 	background: #1559a6;
     }
+    
+    
     /* Navigation dritte Ebene */	
-    ul#navigation ul ul li a, 
-    ul#navigation ul ul li span {
+    ul#navigation ul ul li a {
 	border-left-color: #0094D4;
 	border-bottom-color: #0094D4;
     }
     ul#navigation ul ul li a:hover,
     ul#navigation ul ul li a:focus,
-    ul#navigation ul ul li a:active {
+    ul#navigation ul ul li a:active,
+    ul#navigation ul ul li.current-menu-item > a,
+    ul#navigation ul ul li.current-page-ancestor > a,
+    ul#navigation ul ul li.current-menu-ancestor > a {
 	background: #0094D4;
     }
     ul#navigation li.on ul li a.aktiv {
@@ -39,7 +43,9 @@
     ul#navigation ul ul ul li a:hover,
     ul#navigation ul ul ul li a:focus,
     ul#navigation ul ul ul li a:active,
-    ul#navigation ul ul ul li span.aktiv {
+    ul#navigation ul ul ul li.current-menu-item > a,
+    ul#navigation ul ul ul li.current-page-ancestor > a,
+    ul#navigation ul ul ul li.current-menu-ancestor > a {
 	background: #e5f7ff;
     }
 	

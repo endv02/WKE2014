@@ -36,12 +36,29 @@
 		margin-top: 0.2em;
 		margin-bottom: 0.5em;
 		font-size: 0.9em;
-		color: #eeeff1;
+		color: #fff;
 	}
 	
-	div#footer div#footerinfos  div#zusatzinfo p {
+	div#footer div#footerinfos div#zusatzinfo h2 a,
+	div#footer div#footerinfos div#zusatzinfo h2 a:link,
+	div#footer div#footerinfos div#zusatzinfo h2 a:visited,
+	div#footer div#footerinfos div#zusatzinfo h3 a,
+	div#footer div#footerinfos div#zusatzinfo h3 a:link,
+	div#footer div#footerinfos div#zusatzinfo h3 a:visited,
+	div#footer div#footerinfos div#zusatzinfo h4 a,
+	div#footer div#footerinfos div#zusatzinfo h4 a:link,
+	div#footer div#footerinfos div#zusatzinfo h4 a:visited,
+	div#footer div#footerinfos div#zusatzinfo h5 a,
+	div#footer div#footerinfos div#zusatzinfo h5 a:link,
+	div#footer div#footerinfos div#zusatzinfo h5 a:visited {
 		color: #fff;
-		line-height: 150%;
+	}
+	
+	div#footer div#footerinfos div#zusatzinfo p,
+	div#footer div#footerinfos div#zusatzinfo li {
+		color: #fff;
+		font-size: 0.76em;
+		line-height: 180%;
 	}
 	
 	div#footer div#footerinfos  div#zusatzinfo a,
