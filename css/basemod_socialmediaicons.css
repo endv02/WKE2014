@@ -63,8 +63,43 @@ ul.socialmedia:after {
 .socialmedia .icon_github:before    { margin-top: -448px;}
 .socialmedia .icon_appnet:before    { margin-top: -480px;}
 
+.socialmedia .icon_delicious:hover:before,
+.socialmedia .icon_delicious:focus:before,
+.socialmedia .icon_diaspora:hover:before,
+.socialmedia .icon_diaspora:focus:before,
+.socialmedia .icon_facebook:hover:before,
+.socialmedia .icon_facebook:focus:before,
+.socialmedia .icon_feed:hover:before,
+.socialmedia .icon_feed:focus:before,
+.socialmedia .icon_flattr:hover:before,
+.socialmedia .icon_flattr:focus:before,
+.socialmedia .icon_flickr:hover:before,
+.socialmedia .icon_flickr:focus:before,
+.socialmedia .icon_gplus:hover:before,
+.socialmedia .icon_gplus:focus:before,
+.socialmedia .icon_identica:hover:before,
+.socialmedia .icon_identica:focus:before,
+.socialmedia .icon_itunes:hover:before,
+.socialmedia .icon_itunes:focus:before,
+.socialmedia .icon_skype:hover:before,
+.socialmedia .icon_skype:focus:before,
+.socialmedia .icon_twitter:hover:before,
+.socialmedia .icon_twitter:focus:before,
+.socialmedia .icon_youtube:hover:before,
+.socialmedia .icon_youtube:focus:before,
+.socialmedia .icon_xing:hover:before,
+.socialmedia .icon_xing:focus:before,
+.socialmedia .icon_tumblr:hover:before,
+.socialmedia .icon_tumblr:focus:before,
+.socialmedia .icon_github:hover:before,
+.socialmedia .icon_github:focus:before,
+.socialmedia .icon_appnet:hover:before,
+.socialmedia .icon_appnet:focus:before {
+    margin-left: 0;
+}
 
-.socialmedia .icon_delicious:hover,.socialmedia  .icon_delicious:focus,
+
+/*.socialmedia .icon_delicious:hover,.socialmedia  .icon_delicious:focus,
 .socialmedia .icon_diaspora:hover,.socialmedia .icon_diaspora:focus, 
 .socialmedia .icon_facebook:hover,.socialmedia .icon_facebook:focus,
 .socialmedia .icon_feed:hover,.socialmedia .icon_feed:focus,
@@ -81,4 +116,4 @@ ul.socialmedia:after {
 .socialmedia .icon_github:hover,.socialmedia .icon_github:focus, 
 .socialmedia .icon_appnet:hover,.socialmedia .icon_appnet:focus {    
     background-color: #0066CC; 
-}
+}*/
