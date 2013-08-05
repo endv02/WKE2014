@@ -107,7 +107,7 @@ $default_socialmedia_liste = array(
     ),
     'facebook' => array(
 	'name' => 'Facebook',
-	'content'  => '',
+	'content'  => 'https://www.facebook.com/pages/Webkongress-Erlangen',
 	'active' => 1,
     ),
     'twitter' => array(
