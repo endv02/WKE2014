@@ -258,6 +258,10 @@ function wke2014_add_basemod_styles() {
 	wp_enqueue_style( 'basemod_blau', $options['src_basemod_blau'] );
 	
     }
+     if ((isset($options['aktiv-socialmediabuttons'])) && ($options['aktiv-socialmediabuttons']==1)) {
+	wp_enqueue_style( 'basemod_socialmediabuttons', $options['src_socialmediabuttons'] );
+	
+    }
    
     
     

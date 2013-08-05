@@ -19,7 +19,8 @@ $defaultoptions = array(
     'aktiv-basemod_sidebar'	    => 1,
     'src_basemod_blau'		    => get_template_directory_uri() . '/css/basemod_blau.css',
     'aktiv-basemod_blau'	    => 1,
-    
+    'src_socialmediabuttons'	    => get_template_directory_uri() . '/css/basemod_socialmediaicons.css',   
+    'aktiv-socialmediabuttons'	    => 1,
 
     
     'logo'			    => get_template_directory_uri() . '/images/wke_logo_2014_gruen.png',
@@ -81,7 +82,7 @@ $defaultoptions = array(
     'headerbox-datum'		    => '20.03.<br />+ 21.03.',
     'headerbox-title'		    => 'Webkongress <br /> Erlangen <span class="jahr">2014</span>',
        
-    'aktiv-socialmediabuttons'	    => 1,
+
     'default_footerlink_key'	    => 'Fakultaeten',
 );
 
