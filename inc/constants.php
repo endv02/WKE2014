@@ -45,7 +45,7 @@ $defaultoptions = array(
     'category-teaser-maxlength'		    => 500,            
     'category-teaser-titleup'		    => 1, /* Titles up */ 
     'category-teaser-datebox'		    => 0, 
-	/* 0 = Datebox, 
+	/* 
 	 * 1 = Thumbnail (or: first picture, first video, fallback picture),
 	 * 2 = First picture (or: thumbnail, first video, fallback picture),
 	 * 3 = First video (or: thumbnail, first picture, fallback picture),
@@ -342,7 +342,6 @@ $setoptions = array(
 		      'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels.', 'wke2014' ),
 		      'default' => $defaultoptions['teaser-datebox'],
 		      'liste'   =>  array(
-				    0 => __("Datumsbox anzeigen","wke2014"), 
 				    1 => __("Reihenfolge: Artikelbild, erstes Bild, erstes Video oder Ersatzbild zeigen","wke2014"), 	    
 				    2 => __("Reihenfolge: Erstes Bild, Artikelbild, erstes Video oder Ersatzbild zeigen","wke2014"), 
 				    3 => __("Reihenfolge: Erstes Video, Artikelbild, erstes Bild oder Ersatzbild zeigen","wke2014"), 
@@ -385,7 +384,6 @@ $setoptions = array(
 		      'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'wke2014' ),
 		      'default' => $defaultoptions['teaser-datebox-halfwidth'],
 		      'liste'   =>  array(
-				    0 => __("Datumsbox anzeigen","wke2014"), 
 				    1 => __("Reihenfolge: Artikelbild, erstes Bild, erstes Video oder Ersatzbild zeigen","wke2014"), 	    
 				    2 => __("Reihenfolge: Erstes Bild, Artikelbild, erstes Video oder Ersatzbild zeigen","wke2014"), 
 				    3 => __("Reihenfolge: Erstes Video, Artikelbild, erstes Bild oder Ersatzbild zeigen","wke2014"), 
@@ -412,6 +410,131 @@ $setoptions = array(
 	     ),  
                  
        ),
+       'Indexseiten'   => array(
+           'tabtitle'   => __('Indexseiten', 'wke2014'),
+           'fields' => array(
+              
+	'category'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Indexseiten (Kategorien, Tags und andere)', 'wke2014' ),
+              ),
+	       
+	    
+	       
+	       
+	    'category-num-article-fullwidth' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'wke2014' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'wke2014' ),
+                  'default' => $defaultoptions['category-num-article-fullwidth'],
+		'parent'  => 'category'
+              ),
+              'category-num-article-halfwidth' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber halbe Breite', 'wke2014' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden.', 'wke2014' ),
+                  'liste'   => array(0 => 0, 2 => 2, 4 => 4, 6 => 6, 8 => 8, 10=>10, 12=>12, 14=>14, 16=>16),
+                  'default' => $defaultoptions['category-num-article-halfwidth'],
+		  'parent'  => 'category'
+              ),    
+	    'category-teaser-maxlength' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'L&auml;nge des Teasertextes (Artikelauszug)', 'wke2014' ),
+                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge', 'wke2014' ),
+                  'default' => $defaultoptions['category-teaser-maxlength'],
+		'parent'  => 'category'
+              ),                 
+             'category-teaser-titleup' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Titel oben', 'wke2014' ),
+                  'label'   => __( 'Titel &uuml;ber Logo/Datumsbox und Text', 'wke2014' ),
+                  'default' => $defaultoptions['category-teaser-titleup'],
+                  'parent'  => 'category'
+              ), 
+              'category-teaser-datebox' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Symbolbild/Datumsbox', 'wke2014' ),
+                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels.', 'wke2014' ),
+                  'default' => $defaultoptions['category-teaser-datebox'],
+		  'liste'   =>  array(
+				1 => __("Reihenfolge: Artikelbild, erstes Bild, erstes Video oder Ersatzbild zeigen","wke2014"), 	    
+				2 => __("Reihenfolge: Erstes Bild, Artikelbild, erstes Video oder Ersatzbild zeigen","wke2014"), 
+				3 => __("Reihenfolge: Erstes Video, Artikelbild, erstes Bild oder Ersatzbild zeigen","wke2014"), 
+				4 => __("Reihenfolge: Erstes Video, erstes Bild, Artikelbild oder Ersatzbild zeigen","wke2014"), 
+				5 => __("Nichts anzeigen","wke2014")), 
+
+                  'parent'  => 'category'
+              ), 
+	      'category-teaser-floating' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Flie&szlig;ender Text', 'wke2014' ),
+                  'label'   => __( 'Text umflie&szlig;t das Bild', 'wke2014' ),
+                  'default' => $defaultoptions['category-teaser-floating'],
+                  'parent'  => 'category'
+              ), 
+	       
+               'category-teaser-dateline' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Datumszeile', 'wke2014' ),
+                  'label'   => __( 'Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird', 'wke2014' ),
+                  'default' => $defaultoptions['category-teaser-dateline'],
+                  'parent'  => 'category'
+              ), 
+               
+                'category-teaser-maxlength-halfwidth' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'L&auml;nge des Teasertextes', 'wke2014' ),
+                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'wke2014' ),
+                  'default' => $defaultoptions['category-teaser-maxlength-halfwidth'],
+		'parent'  => 'category'
+              ),                 
+             'category-teaser-titleup-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Titel oben', 'wke2014' ),
+                  'label'   => __( 'Titel &uuml;ber Logo/Datumsbox und Text (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'wke2014' ),
+                  'default' => $defaultoptions['category-teaser-titleup-halfwidth'],
+                  'parent'  => 'category'
+              ), 
+              'category-teaser-datebox-halfwidth' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Symbolbild/Datumsbox', 'wke2014' ),
+                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'wke2014' ),
+                  'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
+		  'liste'   =>  array(
+				1 => __("Reihenfolge: Artikelbild, erstes Bild, erstes Video oder Ersatzbild zeigen","wke2014"), 	    
+				2 => __("Reihenfolge: Erstes Bild, Artikelbild, erstes Video oder Ersatzbild zeigen","wke2014"), 
+				3 => __("Reihenfolge: Erstes Video, Artikelbild, erstes Bild oder Ersatzbild zeigen","wke2014"), 
+				4 => __("Reihenfolge: Erstes Video, erstes Bild, Artikelbild oder Ersatzbild zeigen","wke2014"), 
+				5 => __("Nichts anzeigen","wke2014")), 
+
+                  'parent'  => 'category'
+              ), 
+	       'category-teaser-floating-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Flie&szlig;ender Text', 'wke2014' ),
+                  'label'   => __( 'Text umflie&szlig;t das Bild (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'wke2014' ),
+                  'default' => $defaultoptions['category-teaser-floating-halfwidth'],
+                  'parent'  => 'category'
+              ), 
+               'category-teaser-dateline-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Datumszeile', 'wke2014' ),
+                  'label'   => __( 'Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'wke2014' ),
+                  'default' => $defaultoptions['category-teaser-dateline-halfwidth'],
+                  'parent'  => 'category'
+              ), 
+               
+
+               
+        
+       
+                   
+
+               
+          )
+       ),
+       
+       
         'socialmedia'   => array(
            'tabtitle'   => __('Social Media', 'wke2014'),
            'fields' => array(
@@ -432,8 +555,11 @@ $setoptions = array(
                
           )
        ),
+       
       
-     
+
+       
+	     
    )
 );
 

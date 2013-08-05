@@ -597,7 +597,7 @@ function wke2014_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, 
   if ($showdatebox==0) {
       $showdatebox=1;
   }
-  if (($showdatebox>0)  && ($showdatebox<5)) {
+  if ($showdatebox!=5) {
        $sizeclass = 'ym-column withthumb';      
        // Generate Thumb/Pic or Video first to find out which class we need
        
@@ -614,31 +614,53 @@ function wke2014_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, 
 		$firstpic = get_wke2014_firstpicture();
 		$firstvideo = get_wke2014_firstvideo();
 		$fallbackimg = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+		$output = '';
 		if ($showdatebox==1) {
-		    if (!isset($output)) { $output = $thumbnailcode;}
-		    if (!isset($output)) { $output = $firstpic;}
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
-		    if (!isset($output)) { $output = $fallbackimg;}		    
-		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    
+		    if ((isset($thumbnailcode)) && (strlen(trim($thumbnailcode))>10)) {
+			$output = $thumbnailcode;
+		    } elseif ((isset($firstpic)) && (strlen(trim($firstpic))>10)) {
+			$output = $firstpic;
+		    }  elseif ((isset($firstvideo)) && (strlen(trim($firstvideo))>10)) {
+			$output = $firstvideo; $sizeclass = 'ym-column withvideo';
+		    } else {
+			$output = $fallbackimg;
+		    }
+	    
 		} elseif ($showdatebox==2) {
-		    if (!isset($output)) { $output = $firstpic;}
-		    if (!isset($output)) { $output = $thumbnailcode;}
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
-		    if (!isset($output)) { $output = $fallbackimg;}		    
-		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}			    		    
+
+		    if ((isset($firstpic)) && (strlen(trim($firstpic))>10)) {
+			$output = $firstpic;		    
+		    } elseif ((isset($thumbnailcode)) && (strlen(trim($thumbnailcode))>10)) {
+			$output = $thumbnailcode;
+		    }  elseif ((isset($firstvideo)) && (strlen(trim($firstvideo))>10)) {
+			$output = $firstvideo; $sizeclass = 'ym-column withvideo';
+		    } else {
+			$output = $fallbackimg;
+		    }
+			    		    
 		} elseif ($showdatebox==3) {
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		     		    
-		    if (!isset($output)) { $output = $thumbnailcode;}
-		    if (!isset($output)) { $output = $firstpic;}
-		    if (!isset($output)) { $output = $fallbackimg;}
-		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    
+		    if ((isset($firstvideo)) && (strlen(trim($firstvideo))>10)) {
+			$output = $firstvideo; $sizeclass = 'ym-column withvideo';		    	    
+		    } elseif ((isset($thumbnailcode)) && (strlen(trim($thumbnailcode))>10)) {
+			$output = $thumbnailcode;
+		    } elseif ((isset($firstpic)) && (strlen(trim($firstpic))>10)) {
+			$output = $firstpic;	
+		    } else {
+			$output = $fallbackimg;
+		    }
+		    		    
 		    
 		} elseif ($showdatebox==4) {
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
-		    if (!isset($output)) { $output = $firstpic;}
-		    if (!isset($output)) { $output = $thumbnailcode;}
-		    if (!isset($output)) { $output = $fallbackimg;}
-		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}
+		    if ((isset($firstvideo)) && (strlen(trim($firstvideo))>10)) {
+			$output = $firstvideo; $sizeclass = 'ym-column withvideo';		    	    
+		    } elseif ((isset($firstpic)) && (strlen(trim($firstpic))>10)) {
+			$output = $firstpic;			
+		    } elseif ((isset($thumbnailcode)) && (strlen(trim($thumbnailcode))>10)) {
+			$output = $thumbnailcode;		    
+		    } else {
+			$output = $fallbackimg;
+		    }
+		    		
 		} else {
 		    $output = $fallbackimg; 
 		}	
@@ -664,7 +686,7 @@ function wke2014_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, 
 	</h2></div>       
        <div class="ym-column"> 
      <?php }	
-   /* 0 = Datebox, 
+   /* 
 	 * 1 = Thumbnail (or: first picture, first video, fallback picture),
 	 * 2 = First picture (or: thumbnail, first video, fallback picture),
 	 * 3 = First video (or: thumbnail, first picture, fallback picture),
@@ -844,6 +866,7 @@ function get_wke2014_firstvideo($width = 300, $height = 169, $nocookie =1, $sear
             }
          }  
     }
+   return;
 }
 endif;
 
