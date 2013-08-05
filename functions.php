@@ -281,8 +281,9 @@ add_action('admin_head', 'wke2014_admin_head');
 
 function wke2014_breadcrumbs() {
   global $defaultoptions;
+  global $options;
   $delimiter = '<img width="20" height="9" alt=" &raquo; " src="'.$defaultoptions['src-breadcrumb-image'].'">';
-  $home = __( 'Startseite', 'wke2014' ); // text for the 'Home' link
+  $home = $options['text-startseite']; // text for the 'Home' link
   $before = '<span class="current">'; // tag before the current crumb
   $after = '</span>'; // tag after the current crumb
  
@@ -373,7 +374,10 @@ function wke2014_breadcrumbs() {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
  */
+  } elseif (is_home() || is_front_page()) {
+      echo $before .$home. $after;
   }
+  
 }
 
 function wke2014_contenttitle () {

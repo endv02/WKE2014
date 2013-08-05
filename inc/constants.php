@@ -10,7 +10,6 @@ $defaultoptions = array(
     'thumbnail-width'		    => 624,
     'thumbnail-height'		    => 9999,
     'content-width'                 => 625,  
-    'default_text_title_home_backlink'	=>  __( 'Zur&uuml;ck zur Startseite', 'wke2014' ),
     'src_basemod_zusatzinfo'	    => get_template_directory_uri() . '/css/basemod_zusatzinfo.css',
     'aktiv-basemod_zusatzinfo'	    => 1,    
     'src_basemod_links'		    => get_template_directory_uri() . '/css/basemod_links.css',
@@ -84,7 +83,8 @@ $defaultoptions = array(
     
     'headerbox-datum'		    => '20.03.<br />+ 21.03.',
     'headerbox-title'		    => 'Webkongress <br /> Erlangen <span class="jahr">2014</span>',
-       
+    'text-startseite'		    =>  __( 'Startseite', 'wke2014' ),
+    'default_text_title_home_backlink'	=>  __( 'Zur&uuml;ck zur Startseite', 'wke2014' ),
 
     'default_footerlink_key'	    => 'Fakultaeten',
 );
@@ -266,6 +266,12 @@ $setoptions = array(
                   'title'   => __( 'Titel', 'wke2014'),
                   'label'   => __( 'Subtitel in Box rechts anzeigen','wke2014' ),
                   'default' => $defaultoptions['headerbox-title'],
+              ), 
+	      'text-startseite' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Name Startseite', 'wke2014'),
+                  'label'   => __( 'Name der Startseite f&uuml;r die Brotkr&uuml;melnavigation','wke2014' ),
+                  'default' => $defaultoptions['text-startseite'],
               ), 
 	      'aktiv-autoren' => array(
                   'type'    => 'bool',
