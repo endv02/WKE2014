@@ -17,6 +17,34 @@
 
 
 /*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  1090px
+--------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1090px) {
+	
+		
+}
+
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  960px
+--------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 960px) {
+	
+	div#kopf {
+		/*background-image: none;*/
+		background-size: 75%;
+	}
+	div#kopf div#logo {
+	    width: 25%;
+	}
+	
+	div#kopf div#logo p {
+		width: auto;
+	}
+}
+
+/*  ------------------------------------------------------------------------------------------------------------
 						BREAKPOINT  1000px
 --------------------------------------------------------------------------------------------------------------*/
 	
@@ -47,7 +75,7 @@
 	}
  
  	div#seite {
-		background: #fff url(/grafiken/techfak-2013/balken-bunt.gif) no-repeat top left;
+		background-image: none;
 		padding-left: 0;	
  	}
  	
@@ -62,11 +90,11 @@
 	HEADER
 	--------------------------------------------------------*/
 	
-	div#kopf {
- 		margin-left: 27px;
- 	}
- 	
- 	div#kopf div#logo {
+	div#kopf{
+	    height: 135px;
+	}
+	
+	div#kopf div#logo {
 		height: 135px;
 		padding-left: 0px;		
 		/* background-size: 40%;			nur wichtig bei basemod_lehrstuhllogo */	
@@ -94,7 +122,23 @@
 		left: 12.9em;
  	}
  	
- 	div#kopf div#hauptmenu {
+	#kopf #header-box {
+	    top: 6px;
+	    width: 110px;
+	    height: 112px;
+	    padding-top: 8px;
+	}
+	#kopf #header-box .wrapper {
+	    height: 105px;
+	}
+	#kopf #header-box .datum {
+	    font-size: 16px;
+	}
+	#kopf #header-box .titel {
+	    font-size: 13px;
+	    bottom: 4px;
+	}
+	div#kopf div#hauptmenu {
  	}
  	
  	div#kopf div#suche {
@@ -173,12 +217,16 @@
 }
 
 /*  ------------------------------------------------------------------------------------------------------------
-						BREAKPOINT  720px
+						BREAKPOINT  770px
 --------------------------------------------------------------------------------------------------------------*/
 	
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 770px) {
 	
+    div#kopf {
+	background-image: none;
+    }
+    
 	div#content div.feedrahmen .feedeintrag {
 		float: none;
 		width: 100% !important;
@@ -187,6 +235,31 @@
 	
 	div#kopf div#logo p {
 		font-size: 1.3em;
+	}
+	
+	div#kopf div#logo {
+	    width: 50%;
+	    background-position: 10px center;
+	}
+	#kopf #header-box {
+	    top: 0;
+	    right:0;
+	    height: 135px;
+	    width: 45%;
+	    background: none;
+	    padding: 0;
+	}
+	#kopf #header-box .wrapper {
+	    height: 115px;
+	    padding: 10px;
+	}
+	#kopf #header-box .datum {
+	   font-size: 20px;
+	   left: 10px;
+	}
+	#kopf #header-box .titel {
+	    font-size: 0.9em;
+	    right: 10px;
 	}
 	
 }

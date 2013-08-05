@@ -47,6 +47,7 @@
 		background: url(../images/header_wke2014_1.png);
 		background-position: top right;
 		background-repeat: no-repeat;
+		height: 200px;
 	}
 	
 	
@@ -55,7 +56,8 @@
 	--------------------------------------------------------*/	
 	div#kopf div#logo  {
 		height: 200px;
-		width: 345px;
+		width: 25%;
+		max-width: 345px;
 		padding: 0 10px;
 	}
 	
@@ -94,6 +96,7 @@
 	#kopf #logo a img {
 		background-color: inherit;
 	}
+	
 	/*  ------------------------------------------------------
 	KOPF MIT HEADER-BOX
 	--------------------------------------------------------*/
@@ -152,7 +155,6 @@
 		color: #003366;
 	}
 	
-	
 	/*  ------------------------------------------------------
 	KOPF MIT BREADCRUMB
 	--------------------------------------------------------*/
@@ -209,7 +211,6 @@
 		color: #FDFDF6;
 		border-bottom: #006666 1px solid;
 	}
-		
 	
 	/*  ------------------------------------------------------
 	KOPF MIT SPRUNGMARKEN
@@ -452,7 +453,6 @@
 		padding: 10px 0px;
 		text-align: center;
 	}
-	
 	
 	/*  ------------------------------------------------------
 	MAIN - MENU - INHALTSINFO
@@ -1295,37 +1295,5 @@
 		line-height: 130%;
 	} 
 		
-}
-
-/*  ------------------------------------------------------------------------------------------------------------
-						BREAKPOINT  1090px
---------------------------------------------------------------------------------------------------------------*/
-
-@media screen and (max-width: 1090px) {
-	
-	div#kopf {
-		background: url(/grafiken/techfak-2013/header-techfak-2b.png) no-repeat scroll 48% 0% transparent;
-	}
-	
-	div#kopf div#logo p {
-		width: 35%;
-		padding-top: 15px;
-	}
-		
-}
-
-/*  ------------------------------------------------------------------------------------------------------------
-						BREAKPOINT  960px
---------------------------------------------------------------------------------------------------------------*/
-
-@media screen and (max-width: 960px) {
-	
-	div#kopf {
-		background-image: none;
-	}
-	
-	div#kopf div#logo p {
-		width: auto;
-	}
 }
 
