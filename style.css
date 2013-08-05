@@ -18,6 +18,7 @@ License: GNU General Public License
 /* import screen layout | Screen-Layout einbinden */
 @import url(css/basemod.css);
 @import url(css/content.css);
+@import url(css/buttons.css);
 
 /* Media queries */
 @import url(css/mediaqueries.css);
