@@ -201,15 +201,15 @@
 	* default column config:
 	* |-------------------------------|
 	* | col1    | col3      | col2    |
-	* | 20%     | flexible  | 20%     |
+	* | 30%     | flexible  | 30%     |
 	* |-------------------------------|
 	*/
 
 	.ym-column { display:table; width:100%; }
 
-	.ym-col1 { float:left; width:20%; }
-	.ym-col2 { float:right; width:20%; }
-	.ym-col3 { width:auto; margin:0 20%; }
+	.ym-col1 { float:left; width:30%; }
+	.ym-col2 { float:right; width:30%; }
+	.ym-col3 { width:auto; margin:0 30%; }
 	
 	.ym-col1 + .ym-col3 { margin-right: 0 } /* Wenn es keine col2 gibt, soll col3 die komplette verfügbare Breite ausfüllen*/
 

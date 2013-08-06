@@ -96,5 +96,16 @@
  
 	div#content {
 		padding-top: 30px;
+		padding-right: 20px;
 	}   
+	div#main div#sidebar {
+		float: none;
+		margin: 10.9em 20px 0 16.6em;
+		width: 300px;
+		min-height: 0;
+		width: auto;
+ 	}
+	div#kopf div#titel {
+		padding-right: 10px;
+	}
 }

@@ -26,25 +26,6 @@
 }
 
 /*  ------------------------------------------------------------------------------------------------------------
-						BREAKPOINT  960px
---------------------------------------------------------------------------------------------------------------*/
-
-@media screen and (max-width: 960px) {
-	
-	div#kopf {
-		/*background-image: none;*/
-		background-size: 75%;
-	}
-	div#kopf div#logo {
-	    width: 25%;
-	}
-	
-	div#kopf div#logo p {
-		width: auto;
-	}
-}
-
-/*  ------------------------------------------------------------------------------------------------------------
 						BREAKPOINT  1000px
 --------------------------------------------------------------------------------------------------------------*/
 	
@@ -71,7 +52,7 @@
 	body {
 		max-width: 960px;	
 		overflow: auto;	
-    	-webkit-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
 	}
  
  	div#seite {
@@ -79,10 +60,9 @@
 		padding-left: 0;	
  	}
  	
- 	#main {
+ 	div#main {
  		position: relative;
  		padding-top: 0;
- 		padding-left: 10px;
  	}
  	
  	
@@ -92,12 +72,13 @@
 	
 	div#kopf{
 	    height: 135px;
+	    background-size: 75%;
 	}
 	
 	div#kopf div#logo {
+		width: 25%;
 		height: 135px;
-		padding-left: 0px;		
-		/* background-size: 40%;			nur wichtig bei basemod_lehrstuhllogo */	
+		padding-left: 0px;
 	}
 	
 	div#kopf div#logo img {
@@ -107,6 +88,7 @@
 	
 	div#kopf div#logo p {
 		background: transparent;
+		width: auto;
 		max-width: 40%;
 		padding-right: 10px;
 		right: auto;
@@ -118,6 +100,7 @@
 	}
 	
 	div#kopf div#titel {
+		top: 190px;
 		padding-right: 0;
 		left: 12.9em;
  	}
@@ -144,6 +127,7 @@
  	div#kopf div#suche {
  		width: 10.6em;
  		left: 10px;
+		top: 160px;
  	}
  	
  	div#kopf div#suche input#suchbegriff {
@@ -153,6 +137,7 @@
  	
  	div#kopf div#breadcrumb {
  		left: 12.9em;
+		top: 160px;
  	}
  	
  	/*  ------------------------------------------------------
@@ -179,19 +164,7 @@
 		max-width: 100%;
 	}
 	
-	/*  ------------------------------------------------------
-	SIDEBAR
-	--------------------------------------------------------*/
-	
-	div#main div#sidebar {
-		float:none;
-		margin: 10.9em 20px 0 0;
-		width: 300px;
-		min-height: 0;
-		width: auto;
- 	}
- 	
- 	   
+	   
     /*  ------------------------------------------------------
 	CONTENT
 	--------------------------------------------------------*/
