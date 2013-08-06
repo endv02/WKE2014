@@ -185,7 +185,7 @@
 	
 	div#main div#sidebar {
 		float:none;
-		margin: 10.9em 20px 0 16.9em;
+		margin: 10.9em 20px 0 0;
 		width: 300px;
 		min-height: 0;
 		width: auto;

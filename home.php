@@ -38,13 +38,13 @@
                      if (( isset($options['num-article-startpage-fullwidth']))
                             && ($options['num-article-startpage-fullwidth']==$key )
                              && ($options['num-article-startpage-fullwidth']>0 )) {
-                         echo '<hr>';
+                         echo '<hr class="trenner">';
                         }                                              
                     echo '<div class="column'.$z.'">' . $col . '</div>';                            
                     $z++;
                     if ($z>2) {
                         $z=1;
-                        echo '<hr style="clear: both;">';
+                        echo '<hr class="trenner">';
                     }
                 }            
         }

@@ -1013,6 +1013,9 @@ div.bildbox_l{
 /*  ------------------------------------------------------
 BEITRÄGE 
 --------------------------------------------------------*/
+div#content .post-title {
+    margin-top: 15px;
+}
 
 div#content .pubdateinfo {
     font-size: .71em;
@@ -1033,9 +1036,22 @@ div#content div.post-nav ul li {
     text-overflow: ellipsis;
     overflow: hidden;
 }
+
 div#content div.post-nav ul li.back {
     text-align: left;
 }
+
 div#content div.post-nav ul li.forward {
     text-align: right;
+}
+div#content .column1 .post-title h2,
+div#content .column2 .post-title h2 {
+    font-size: 1.1em;
+}
+div#content .columns hr.trenner {
+    clear: both;
+    background-color: #ccc; /* Farbe für Opera und Firefox */
+    color: #ccc; /* Farbe für Internet Explorer (IE) */
+    border: 0;
+    height: 1px; 
 }
