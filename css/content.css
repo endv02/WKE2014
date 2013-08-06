@@ -389,6 +389,9 @@ div#content img{
 	max-width: 100%; 
 	height: auto; 
 }
+div#content .wp-caption-text {
+    font-style: italic;
+}
 
 /*  ------------------------------------------------------
 TABELLEN
@@ -887,7 +890,7 @@ Besondere Hinweisboxen
 }
 #content div.hinweis_wichtig {
     border: 1px solid red;	
-    background-image: url(/img/important.png);
+    background-image: url(../images/important.png);
     background-repeat: no-repeat;
     background-position: left center; 	
 }
@@ -915,7 +918,7 @@ Besondere Hinweisboxen
 }
 #content div.hinweis {
     border: 1px solid #ccc;
-    background-image: url(/img/ktip.png);
+    background-image: url(../images/ktip.png);
     background-repeat: no-repeat;
     background-position: left center; 	
 }
@@ -932,7 +935,7 @@ Besondere Hinweisboxen
 }
 #content div.hinweis_rechts {
     border: 1px solid #ccc;
-    background-image: url(/img/ktip.png);
+    background-image: url(../images/ktip.png);
     background-repeat: no-repeat;
     background-position: left center; 	
 }
@@ -956,7 +959,7 @@ Besondere Hinweisboxen
 }
 #content div.baustelle {
     border: 1px solid #ccc;	
-    background-image: url(/img/package_settings.png);
+    background-image: url(../images/package_settings.png);
     background-repeat: no-repeat;
     background-position: left center; 	
 }
@@ -1007,4 +1010,32 @@ div.bildbox_l{
     padding: 5px;
 }
 
+/*  ------------------------------------------------------
+BEITRÄGE 
+--------------------------------------------------------*/
+
+div#content .pubdateinfo {
+    font-size: .71em;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+div#content div.post-nav ul {
+    list-style-type: none;
+    margin: 10px 0 16px;
+    color: #666F7A;
+}
+
+div#content div.post-nav ul li {
+    display: inline-block;
+    width: 49%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+div#content div.post-nav ul li.back {
+    text-align: left;
+}
+div#content div.post-nav ul li.forward {
+    text-align: right;
 }

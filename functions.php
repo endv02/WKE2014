@@ -493,7 +493,7 @@ function wke2014_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'wke2014_excerpt_length' );
 
 function wke2014_continue_reading_link() {
-        return ' <a class="nobr" title="'.strip_tags(get_the_title()).'" href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'wke2014' ) . '</a>';
+        return ' <a class="nobr weiter" title="'.strip_tags(get_the_title()).'" href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'wke2014' ) . '</a>';
 }
 
 function wke2014_auto_excerpt_more( $more ) {

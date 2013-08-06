@@ -25,32 +25,37 @@
   */
 
   
-  #content a[href^="http:"] {
+  /*#content a[href^="http:"] {
     padding-left:12px;      
-    background:url('/img/links/extern.gif') center left no-repeat;
-  } 
+    background:url('../images/links/extern.gif') center left no-repeat;
+  }
+  #content a.weiter {
+    padding-left: 0;      
+    background:none;
+  }*/
+  
   #content a[href^="http://www.techfak.uni-erlangen.org"] {
     padding-left:16px;      
-    background:url('/img/links/englisch.gif') center left no-repeat;
+    background:url('../images/links/englisch.gif') center left no-repeat;
   } 
   #content a[href^="http://blogs.fau.de"] {
     padding-left:18px;      
-    background:url('/img/links/blog.png') center left no-repeat;
+    background:url('../images/links/blog.png') center left no-repeat;
   }
   #content a[href^="http://univis"] {
     padding-right:44px;      
     padding-left: 0px;
-    background:url('/img/links/univis.gif') center right no-repeat;
+    background:url('../images/links/univis.gif') center right no-repeat;
   }
 
 #content a[href ^="https://"] {
    color: #0066BB;
-    background: url(/img/links/lock.gif) center right no-repeat;
+    background: url(../images/links/lock.gif) center right no-repeat;
     padding-right: 16px;
 }
 #content a[href ^="mailto:"] {
    color: #0066BB;
-    background: url(/img/links/mail.gif) center right no-repeat;
+    background: url(../images/links/mail.gif) center right no-repeat;
     padding-right: 18px;
 }
 #content a[href $=".ogg"], a[href $=".OGG"],
@@ -59,20 +64,20 @@
 #content a[href $=".mp3"], a[href $=".MP3"],
 #content a[href $=".wav"], a[href $=".WAV"],
 #content a[href $=".wma"], a[href $=".WMA"] {
-    background: url("/img/links/audio.png") center left no-repeat;
+    background: url("../images/links/audio.png") center left no-repeat;
     padding-left: 19px;
 }
 #content a[href $=".ogm"], a[href $=".OGM"],
 #content a[href $=".avi"], a[href $=".AVI"],
 #content a[href $=".mpeg"], a[href $=".MPEG"],
 #content a[href $=".mpg"], a[href $=".MPG"] {
-    background: url("/img/links/video.png") center left no-repeat;
+    background: url("../images/links/video.png") center left no-repeat;
     padding-left: 19px;
 }
 #content a[href $=".pdf"], a[href $=".PDF"],
 #content a[href *=".pdf#"], a[href *=".PDF#"],
 #content a[href *=".pdf?"], a[href *=".PDF?"] {
-    background: url("/img/links/pdf.gif") center left no-repeat;
+    background: url("../images/links/pdf.gif") center left no-repeat;
     padding-left: 19px;
 }
 #content a[href $=".zip"], a[href $=".ZIP"],
@@ -82,7 +87,7 @@
 #content a[href $=".dmg"], a[href $=".DMG"],
 #content a[href $=".gz"], a[href $=".GZ"],
 #content a[href *=".gzip"], a[href *=".GZIP"] {
-    background: url("/img/links/zip.gif") center left no-repeat;
+    background: url("../images/links/zip.gif") center left no-repeat;
     padding-left: 19px;
 }
 

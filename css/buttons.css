@@ -17,6 +17,7 @@
  
 @media screen, projection
 {
+    div#content a.post-edit-link:link,
     .button {
 	display: inline-block;
 	outline: none;
@@ -34,9 +35,11 @@
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	box-shadow: 0 1px 2px rgba(0,0,0,.2);
     }
+    div#content a.post-edit-link:link:hover,
     .button:hover {
 	text-decoration: none;
     }
+    div#content a.post-edit-link:link:active,
     .button:active {
 	position: relative;
 	top: 1px;
@@ -133,6 +136,7 @@
 	background: linear-gradient(to bottom,  #67b32d 0%,#94d95f 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67b32d', endColorstr='#94d95f',GradientType=0 ); /* IE6-9 */
     }
+    div#content a.post-edit-link:link,
     .grau {
 	color: #555 !important;
 	background: #eeeeee; /* Old browsers */

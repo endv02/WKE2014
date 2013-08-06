@@ -385,8 +385,8 @@
 		text-decoration: none;
 		border-left: 3px solid #66b32d;
 		border-bottom: 1px solid #66b32d;
-		color:#003366;
-		margin-top:5px;
+		color: #003366;
+		margin-top: 5px;
 	}
 	
 	ul#navigation li a:hover,
@@ -396,6 +396,7 @@
 	    color: #fff;
 	}
 	
+	ul#navigation li.current-page-item > a,
 	ul#navigation li.current-menu-item > a,
 	ul#navigation li.current-page-ancestor > a,
 	ul#navigation li.current-menu-ancestor > a {
@@ -409,53 +410,64 @@
 	    display: none;
 	}
 	
+	ul#navigation li.current-page-item > ul.sub-menu,
 	ul#navigation li.current-menu-item > ul.sub-menu,
 	ul#navigation li.current-page-ancestor > ul.sub-menu,
 	ul#navigation li.current-menu-ancestor > ul.sub-menu {
 	    display: block;
 	}
 	
-	ul#navigation li a:hover,
-	ul#navigation li a:focus,
-	ul#navigation li a:active {
-	    background: #66b32d;
-	    color: #fff;
+	ul#navigation ul li a {
+	    margin-top: 0;
 	}
-	
-	ul#navigation li.current-menu-item > a {
-	    background: #66b32d;
+	ul#navigation ul li a {
+	    border-left-color: #6ec130;
+	    border-bottom-color: #6ec130;
+	    margin-top: 0;
+	}
+	ul#navigation ul li a:hover,
+	ul#navigation ul li a:focus,
+	ul#navigation ul li a:active {
+	    background: #6ec130;
+	}
+	ul#navigation ul li.current-page-item > a,
+	ul#navigation ul li.current-menu-item > a,
+	ul#navigation ul li.current-page-ancestor > a,
+	ul#navigation ul li.current-menu-ancestor > a{
+	    background: #6ec130;
 	    color: #fff;  
 	}
 	
 	/* Fuer eine dritte Ebene */	
 	ul#navigation ul ul li a {
-	    border-left-color: #76cc36;
-	    border-bottom-color: #76cc36;
+	    border-left-color: #88d351;
+	    border-bottom-color: #88d351;
 	    margin-top: 0;
 	}
 	ul#navigation ul ul li a:hover,
 	ul#navigation ul ul li a:focus,
-	ul#navigation ul ul li a:active {
-	    background: #76cc36;
-	}
+	ul#navigation ul ul li a:active,
+	ul#navigation ul ul li.current-page-item > a,
 	ul#navigation ul ul li.current-menu-item > a,
 	ul#navigation ul ul li.current-page-ancestor > a,
-	ul#navigation ul ul li.current-menu-ancestor > a{
-	    background: #76cc36;
+	ul#navigation ul ul li.current-menu-ancestor > a {
+	    background: #88d351;
 	    color: #fff;  
 	}
 	
 	/* Fuer eine vierte Ebene */	
-	
-	ul#navigation ul ul ul li a, 
-	ul#navigation ul ul ul li span {
-	    margin-left: 45px;
-	    
+	ul#navigation ul ul ul li a {
+	    border-left-color: #a4dd79;
+	    border-bottom-color: #a4dd79;
 	}
 	ul#navigation ul ul ul li a:hover,
 	ul#navigation ul ul ul li a:focus,
-	ul#navigation ul ul ul li a:active {
-	    background: #dbf2cb;
+	ul#navigation ul ul ul li a:active,
+	ul#navigation ul ul ul li.current-page-item > a,
+	ul#navigation ul ul ul li.current-menu-item > a,
+	ul#navigation ul ul ul li.current-page-ancestor > a,
+	ul#navigation ul ul ul li.current-menu-ancestor > a {
+	    background: #a4dd79;
 	    color: #036;
 	}
 	
@@ -935,6 +947,7 @@
 	}
 	.jquery_body {
 	}
+	
 	/*  ------------------------------------------------------
 	MELDUNGEN
 	--------------------------------------------------------*/
