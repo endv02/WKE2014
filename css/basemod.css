@@ -406,6 +406,13 @@
 	/* Fuer eine zweite Ebene */	
 	ul#navigation ul.sub-menu {
 	    margin-left: 10px;
+	    display: none;
+	}
+	
+	ul#navigation li.current-menu-item > ul.sub-menu,
+	ul#navigation li.current-page-ancestor > ul.sub-menu,
+	ul#navigation li.current-menu-ancestor > ul.sub-menu {
+	    display: block;
 	}
 	
 	ul#navigation li a:hover,
