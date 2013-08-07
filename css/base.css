@@ -207,15 +207,42 @@
 
 	.ym-column { display:table; width:100%; }
 
-	.ym-col1 { float:left; width:30%; }
-	.ym-col2 { float:right; width:30%; }
-	.ym-col3 { width:auto; margin:0 30%; }
+	.ym-col1 { float:left; width:20%; }
+	.ym-col2 { float:right; width:20%; }
+	.ym-col3 { width:auto; margin:0 20%; }
+	
+	.column1 .ym-col1 { float:left; width:30%; }
+	.column2 .ym-col1 { float:left; width:30%; }
+	.column1 .ym-col2 { float:right; width:30%; }
+	.column2 .ym-col2 { float:right; width:30%; }
+	.column1 .ym-col3 { width:auto; margin:0 30%; }
+	.column2 .ym-col3 { width:auto; margin:0 30%; }
 	
 	.ym-col1 + .ym-col3 { margin-right: 0 } /* Wenn es keine col2 gibt, soll col3 die komplette verfügbare Breite ausfüllen*/
-
+	
+	.column1 .withvideo .ym-column,
+	.column2 .withvideo .ym-column { height: 100%; }
+	.withvideo .ym-col1 { width: 320px; max-width: 100%; } /* Videos in  der ersten Spalte dürfen breiter sein */
+	.withvideo .ym-col1 + .ym-col3 { margin-left: 320px; }
+	.column1 .withvideo .ym-col1,
+	.column2 .withvideo .ym-col1 { float: none; width: 100%; height: auto;}
+	.column1 .withvideo .ym-col3,
+	.column2 .withvideo .ym-col3 { margin: 0 }
+	
+	.column1 .withvideo .infoimage,
+	.column2 .withvideo .infoimage {
+	    position: relative;
+	}
+	.column1 .withvideo iframe,
+	.column2 .withvideo iframe {
+	    width: 100% !important;
+	    height: auto !important;
+	}
+	.column2 .withvideo .ym-col3 { margin: 0 }
+	
 	/* (en) Preparation for absolute positioning within content columns */
 	/* (de) Vorbereitung für absolute Positionierungen innerhalb der Inhaltsspalten */
-	.ym-cbox
+	.ym-cbox,
 	.ym-cbox-left,
 	.ym-cbox-right { position:relative; }
 
@@ -223,6 +250,7 @@
 	.ym-cbox-left { padding: 0 10px 0 0 }
 	.ym-cbox-right { padding: 0 0 0 10px }
 
+	
 	/* (en) IE-Clearing:Only used in Internet Explorer, switched on in iehacks.css */
 	/* (de) IE-Clearing:Benötigt nur der Internet Explorer und über iehacks.css zugeschaltet */
 	.ym-ie-clearing { display:none; }

@@ -1013,6 +1013,10 @@ div.bildbox_l{
 /*  ------------------------------------------------------
 BEITRÄGE 
 --------------------------------------------------------*/
+div#content .post {
+    margin: 10px 0;
+}
+
 div#content .post-title {
     margin-top: 15px;
 }
@@ -1054,4 +1058,8 @@ div#content .columns hr.trenner {
     color: #ccc; /* Farbe für Internet Explorer (IE) */
     border: 0;
     height: 1px; 
+}
+div#content .sticky {
+    border: 1px solid #0094D4;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
