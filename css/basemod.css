@@ -59,17 +59,18 @@
 		width: 25%;
 		max-width: 345px;
 		padding: 0 10px;
+		background: #ffffff;
 	}
 	
 	div#kopf div#logo img { 
 		position: static;
 		background: #ffffff;
-		width: auto;
-		height: auto;
+		display: block ; 
+		margin: 0 auto;
 	}
 	
 	div#kopf div#logo p {
-		padding: 47px 87px;	
+		padding: 47px 0;	
 	}
 	div#kopf div#logo p .description {
 		  display: block;
@@ -115,6 +116,7 @@
 	    background-color: #fff;
 	    background-color: #fff;
 	    padding: 3px 6px 6px 6px;
+	    text-align: right;
 	}
 	
 	#kopf #header-box .datum {

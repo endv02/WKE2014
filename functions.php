@@ -539,7 +539,7 @@ function wke2014_comment( $comment, $args, $depth ) {
                 <div class="comment-details">
                     
                 <div class="comment-author vcard">
-                    printf( __( '%s <span class="says">meinte am</span>', 'wke2014' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); 
+                    <?php printf( __( '%s <span class="says">meinte am</span>', 'wke2014' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); 
                     ?>
                 </div><!-- .comment-author .vcard -->
                 <?php if ( $comment->comment_approved == '0' ) : ?>

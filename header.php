@@ -32,9 +32,6 @@ global $options;
 				</p>
 				
 			</div>
-			<div id="titel">
-				<h1><?php wke2014_contenttitle(); ?></h1> 
-			</div>       
 			<?php if ( is_active_sidebar( 'headerbox-area' ) ) { 
 			    dynamic_sidebar( 'headerbox-area' ); 
 			 } elseif (isset($options['headerbox-datum']) && isset($options['headerbox-title'])) { ?>
@@ -44,10 +41,16 @@ global $options;
 				    <p class="titel"><?php echo $options['headerbox-title']; ?></p>
 				</div>
 			    </div>
-			 <?php } ?>
-
-	      
+			<?php } ?>
+			
 			<?php get_search_form(); ?>
+			
+			<div id="titel">
+				<h1><?php wke2014_contenttitle(); ?></h1> 
+			</div>       
+			
+	      
+			
 		 
         <div id="breadcrumb">
           	<h2>Sie befinden sich hier: </h2>

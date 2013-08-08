@@ -332,6 +332,13 @@
 	    width: 100%;
 	}
 	
+	.withvideo .ym-col1 {
+	    float: none;
+	}
+	
+	.withvideo .ym-col1 + .ym-col3 { 
+	    margin-left: 0;
+	}
 }
 
 

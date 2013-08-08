@@ -94,10 +94,6 @@
 @media screen and (max-width: 960px) {
     /* Definitionen nur für maximale Fenster- bzw. Bildschirmbreite von 768px - Standard für Tablets */
  
-	div#content {
-		padding-top: 30px;
-		padding-right: 20px;
-	}   
 	div#main div#sidebar {
 		float: none;
 		margin: 10.9em 20px 0 16.6em;
@@ -108,4 +104,41 @@
 	div#kopf div#titel {
 		padding-right: 10px;
 	}
+	/*  ------------------------------------------------------
+	SIDEBAR
+	--------------------------------------------------------*/
+	
+	aside {
+	    position: absolute;
+	    bottom: 0px;
+	    height: 500px;
+	    overflow-y: scroll;
+	    border-top: 1px solid #ccc;
+	}
+	div#main div#sidebar {
+	    width: 97%;
+	    margin: 0;
+	    padding: 10px;
+	}
+	/*  ------------------------------------------------------
+	CONTENT
+	--------------------------------------------------------*/
+    
+	div#content {
+	    min-height: 0;
+	    padding-bottom: 510px;
+	}
 }
+
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  480px
+--------------------------------------------------------------------------------------------------------------*/
+	
+
+@media screen and (max-width: 480px) {
+    
+    div#main div#sidebar {
+	    width: 90%
+    }
+    
+};

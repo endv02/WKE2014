@@ -26,14 +26,13 @@
 }
 
 /*  ------------------------------------------------------------------------------------------------------------
-						BREAKPOINT  1000px
+						BREAKPOINT  1020px
 --------------------------------------------------------------------------------------------------------------*/
 	
-@media screen and (max-width: 1000px) {
-	
-	/*div#kopf {
-		background-image: none;
-	}*/
+@media screen and (max-width: 1020px) {
+	div#kopf div#logo  {
+	    width: 20%;
+	}
 	
 }
 
@@ -82,7 +81,6 @@
 	}
 	
 	div#kopf div#logo img {
-		max-width: 50%;
 		height: auto;
 	}
 	
@@ -90,7 +88,7 @@
 		background: transparent;
 		width: auto;
 		max-width: 40%;
-		padding-right: 10px;
+		padding: 20px 10px;
 		right: auto;
 		line-height: 110%;
 	}
@@ -141,6 +139,12 @@
  	}
  	
  	/*  ------------------------------------------------------
+	MAIN
+	--------------------------------------------------------*/
+	
+	div#main {
+	}
+	/*  ------------------------------------------------------
 	MENU
 	--------------------------------------------------------*/
 	
@@ -165,14 +169,7 @@
 	}
 	
 	   
-    /*  ------------------------------------------------------
-	CONTENT
-	--------------------------------------------------------*/
-    
-    div#content {
-		float: none;
-		min-height: 0;
-	}
+	
     
     /*  ------------------------------------------------------
 	FOOTER
@@ -233,6 +230,7 @@
 	#kopf #header-box .titel {
 	    font-size: 0.9em;
 	    right: 10px;
+	    bottom: 10px;
 	}
 	
 }
@@ -271,8 +269,6 @@
 	div#seite {  
 		border-width: 0;
 		min-width: 0;
-		background: #fff url(/grafiken/techfak-2013/balken-bunt.gif) no-repeat top left;
-		background-size: auto 110px;
 	}
 	
 	img{
@@ -293,24 +289,21 @@
 		min-width: 0;
 		position: relative;
 		background-image: none;
-		margin-left: 21px;
+		height: auto;
 	}
 	
 	div#kopf div#logo {
 		position: relative;
-		height: auto;
+		height: 120px;
 		padding: 0 10px 0 0;
 		min-height: 109px;
-		border-bottom: 1px solid #ADB4BB;
-		background-size: 40%;			/* nur wichtig bei basemod_lehrstuhllogo */
+		border-bottom: 3px solid #0094D4;
 	}
 		
 	div#kopf div#logo img {
 		margin: 0;
-		padding-left: 10px;
-		padding-top: 10px;
-		padding-bottom: 0;
 		max-height: 75px;
+		max-width: 90%;
 	}
 	
 	div#kopf div#logo p {
@@ -319,7 +312,7 @@
 		max-width: 100%;
 		height: auto;
 		top: 0;
-		padding: 15px 5px 5px 5px;
+		padding: 15px 5px 5px 10px;
 		font-size: 120%;
 		line-height: 110%;
 		letter-spacing: 0;
@@ -330,33 +323,50 @@
 		text-decoration: none;
 	}
 	
+	#kopf #header-box {
+	    width: 50%;
+	    height: 120px;
+	    border-bottom: 3px solid #0094D4;
+	}
+	
+	#kopf #header-box .wrapper {
+	    height: 100px;
+	}
+	
+	#kopf #header-box .datum {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	
+	#kopf #header-box .titel {
+		position: static;
+	}
+	
 	div#kopf div#titel {
 		position: relative;
 		top: 0;
 		left: 0;
-		padding: 0;
-		margin-left: -21px;
 	}
 	
 	div#kopf div#titel h1 {
 		font-size: 1.1em;
 		font-weight: bold;
 		line-height: 100%;
-		margin: 15px 5px 10px 15px;
+		margin: 15px 0 10px 10px;
 	}
 	
 	div#kopf div#suche {
 		position: relative;
 		top: auto;
-		left: auto;
-		right: auto;
+		right: 0;
 		bottom: auto;
+		left: auto;
 		text-align: right;
 		background-color: transparent;
 		width: 95%;
 		max-width: 16em;
-		margin-left: auto; 
-		margin-right: 10px;
+		margin: 10px 10px 5px auto;
+		padding: 0 10px;
 	}
 	
 	div#kopf div#suche p {
@@ -388,7 +398,6 @@
 	div#kopf div#sprungmarken {
 		display: block;
 		position: relative;	
-		margin-left: -21px;
 		top: auto;
 		right: auto;
 		bottom: auto;
@@ -399,7 +408,7 @@
 	div#kopf div#sprungmarken li a:hover,
 	div#kopf div#sprungmarken li a:focus {
 		position: absolute;
-		top: -60px;
+		top: -100px;
 		right: 5px;
 		width: auto;
 	}
@@ -493,15 +502,14 @@
 	div#main {
 		border: 0;
 		min-height: 0;
-		position: relative;
-		top: 10px;
 		padding-left: 0;
 		background: none;
-		padding: 0;
+		padding: 10px 0 0 0;
+		border-top: none !important;
 	}
 	
 	div#menu {
-    	width: 100%;
+		width: 100%;
 		margin: 0;
 		display: block;
 		clear: both;
@@ -510,7 +518,7 @@
 	}
 	
 	div#menu div#bereichsmenu {
-    	width: 100%;
+		width: 100%;
 		margin-bottom: 0;
 		padding-bottom: 0;
 	}
@@ -634,10 +642,11 @@
 	MISC
 	--------------------------------------------------------*/
 	
-	div#zusatzinfo {
+	div#footer div#footerinfos div#zusatzinfo {
+		clear: left;
 		position: static;
 		width: auto;
-		padding: 10px;
+		padding: 10px !important;
 	}
 	
 	div#map {
@@ -725,4 +734,35 @@
 		content: "";
 	}*/
 	
+}
+
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  280px
+--------------------------------------------------------------------------------------------------------------*/
+	
+@media screen and (max-width: 280px) {
+    
+    div#kopf div#logo p {
+	padding-left: 5px;
+    }
+	
+    #kopf #header-box {
+	width: auto;
+	background-color: transparent;
+    }
+    
+    #kopf #header-box .wrapper {
+	background-color: transparent;
+	padding-right: 5px;
+    }
+    
+    #kopf #header-box .datum {
+	font-size: 16px;
+	background-color: #fff;
+	display: inline-block;
+    }
+    #kopf #header-box .titel {
+	background-color: #fff;
+    }
+    
 }
