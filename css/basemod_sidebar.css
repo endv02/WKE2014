@@ -17,7 +17,7 @@
 @media screen, projection
 {
  
-	div#kopf div#titel {
+	#kopf #titel {
 		padding-right: 16.6em;
 	}
 	
@@ -44,38 +44,38 @@
 		margin: 4px 0 8px 0;
 	}
 	
-	div#main div#sidebar a,
-	div#main div#sidebar a:link,
-	div#main div#sidebar a:visited {
+	#sidebar a,
+	#sidebar a:link,
+	#sidebar a:visited {
 		color: #575e68;
 	}
 	
-	div#main div#sidebar a:focus,
-	div#main div#sidebar a:active,
-	div#main div#sidebar a:hover {
+	#sidebar a:focus,
+	#sidebar a:active,
+	#sidebar a:hover {
 		color: #666f7a;
 	}
 	
-	div#main div#sidebar ul {
+	#sidebar ul {
 		margin-left: 20px;
 		list-style-type: disc;
 	}
 	
-	div#main div#sidebar ul li {
+	#sidebar ul li {
 		margin-bottom: 3px;
 	}
 	
-	div#main div#sidebar .widget {
+	#sidebar .widget {
 	    border: 1px solid #CCC;
 	    margin-bottom: 24px;
 	    padding: 1em;
 	}
 	
-	div#main div#sidebar div.feedeintrag {
+	#sidebar .feedeintrag {
 		width: 100%;
 	}
 	
-	div#main:after {
+	#main:after {
 		clear:both;
 		content:".";
 		display:block;

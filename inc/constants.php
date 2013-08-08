@@ -87,7 +87,36 @@ $defaultoptions = array(
     'default_text_title_home_backlink'	=>  __( 'Zur&uuml;ck zur Startseite', 'wke2014' ),
 
     'default_footerlink_key'	    => 'Fakultaeten',
+    
+    'aktiv-buttons'			=> 1,
+    'aktiv-anmeldebutton'		=> 1,
+    'url-anmeldebutton'			=> 'http://de.amiando.com/wke2014.html',
+    'title-anmeldebutton'		=> 'Tickets kaufen',
+    'color-anmeldebutton'		=> 'gruen',
+
+    'aktiv-cfpbutton'			=> 1,
+    'url-cfpbutton'			=> '/programm/vortragsvorschlag-einreichen-call-for-paper/',
+    'title-cfpbutton'			=> 'Vortrag einreichen',
+    'color-cfpbutton'			=> 'gelb',
+    
 );
+
+
+  if (isset($options['aktiv-buttons']) && ($options['aktiv-buttons']==1)) {
+	  if (isset($options['aktiv-anmeldebutton']) && ($options['aktiv-anmeldebutton']==1)
+              && isset($options['url-anmeldebutton']) ) {
+	      echo '<div class="button breit '.$options['color-anmeldebutton'].'">';
+	      echo '<a href="'.$options['url-anmeldebutton'].'">'.$options['title-anmeldebutton'].'</a></div>';
+	      echo "\n";
+	   }
+      
+	  if (isset($options['aktiv-cfpbutton']) && ($options['aktiv-cfpbutton']==1)
+              && isset($options['url-cfpbutton']) ) {
+	      echo '<div class="button breit '.$options['color-cfpbutton'].'">';
+	      echo '<a href="'.$options['url-cfpbutton'].'">'.$options['title-cfpbutton'].'</a></div>';
+	      echo "\n";
+	   }
+      }
 
 
 
@@ -279,7 +308,88 @@ $setoptions = array(
                   'label'   => __( 'Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken.', 'wke2014' ),
                   'default' => $defaultoptions['aktiv-autoren'],
               ),
-	     
+	     'buttons'  => array(
+		      'type'    => 'section',
+		      'title'   => __( 'Anmeldebuttons', 'wke2014' ),                      
+		  ), 
+	       'aktiv-buttons' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Buttons anzeigen', 'wke2014' ),
+                  'label'   => __( 'Rechts oberhalb der Sidebar Anmeldebuttons zeigen', 'wke2014' ),
+                  'default' => $defaultoptions['aktiv-buttons'],
+		   'parent'  => 'buttons'
+              ),
+	      'aktiv-anmeldebutton' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Anmeldebutton', 'wke2014' ),
+                  'label'   => __( 'Button f&uuml;r eine Anmeldung', 'wke2014' ),
+                  'default' => $defaultoptions['aktiv-anmeldebutton'],
+		  'parent'  => 'buttons'
+              ),
+	       'url-anmeldebutton' => array(
+                  'type'    => 'url',
+                  'title'   => __( 'URL', 'wke2014' ),
+                  'label'   => __( 'Ziel des Anmeldebuttons', 'wke2014' ),
+                  'default' => $defaultoptions['url-anmeldebutton'],
+		  'parent'  => 'buttons'
+              ),
+	       'title-anmeldebutton' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Linktitel', 'wke2014' ),
+                  'label'   => __( 'Titeltext des Anmeldebuttons', 'wke2014' ),
+                  'default' => $defaultoptions['title-anmeldebutton'],
+		  'parent'  => 'buttons'
+              ), 
+	       'color-anmeldebutton' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Farbe', 'wke2014' ),
+                  'label'   => __( 'Hintergrundfarbe des Anmeldebuttons', 'wke2014' ),
+                  'default' => $defaultoptions['color-anmeldebutton'],
+		  'liste'   =>  array(
+				'grau' => __("Grau","piratenkleider"), 
+				'gelb' => __("Gelb","piratenkleider"), 	    
+				'gruen' => __("Gr&uuml;n","piratenkleider"), 
+				'blau' => __("Blau","piratenkleider"), 
+				), 
+		  'parent'  => 'buttons'
+              ),  
+	       'aktiv-cfpbutton' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Anmeldebutton', 'wke2014' ),
+                  'label'   => __( 'Aktiviere einen weiteren Buttons', 'wke2014' ),
+                  'default' => $defaultoptions['aktiv-cfpbutton'],
+		  'parent'  => 'buttons'
+              ),
+	       'url-cfpbutton' => array(
+                  'type'    => 'url',
+                  'title'   => __( 'URL', 'wke2014' ),
+                  'label'   => __( 'Ziel eines weiteren Buttons', 'wke2014' ),
+                  'default' => $defaultoptions['url-cfpbutton'],
+		  'parent'  => 'buttons'
+              ),
+	       'title-cfpbutton' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Linktitel', 'wke2014' ),
+                  'label'   => __( 'Titeltext eines weiteren Buttons', 'wke2014' ),
+                  'default' => $defaultoptions['title-cfpbutton'],
+		  'parent'  => 'buttons'
+              ), 
+	       'color-cfpbutton' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Farbe', 'wke2014' ),
+                  'label'   => __( 'Hintergrundfarbe eines weiteren Buttons', 'wke2014' ),
+                  'default' => $defaultoptions['color-cfpbutton'],
+		  'liste'   =>  array(
+				'grau' => __("Grau","piratenkleider"), 
+				'gelb' => __("Gelb","piratenkleider"), 	    
+				'gruen' => __("Gr&uuml;n","piratenkleider"), 
+				'blau' => __("Blau","piratenkleider"), 
+				), 
+		  'parent'  => 'buttons'
+              ),  
+	       
+
+	       
 	     
                
            )
@@ -533,6 +643,8 @@ $setoptions = array(
                
           )
        ),
+       
+        
        
        
         'socialmedia'   => array(
