@@ -44,18 +44,6 @@
 		margin: 4px 0 8px 0;
 	}
 	
-	#sidebar a,
-	#sidebar a:link,
-	#sidebar a:visited {
-		color: #575e68;
-	}
-	
-	#sidebar a:focus,
-	#sidebar a:active,
-	#sidebar a:hover {
-		color: #666f7a;
-	}
-	
 	#sidebar ul {
 		margin-left: 20px;
 		list-style-type: disc;
@@ -73,6 +61,11 @@
 	
 	#sidebar .feedeintrag {
 		width: 100%;
+	}
+	
+	div#sidebar a, 
+	div#sidebar a:link {
+	    color: #666F7A;
 	}
 	
 	#main:after {
@@ -97,6 +90,35 @@
 	}
 	div#main div#sidebar .slickr-flickr-gallery img {
 	    padding: 3px;
+	}
+	
+	/* Suche */
+	div#sidebar div#suche input[type="submit"] {
+	    float: right;
+	    padding: 3px;
+	}
+	
+	div#sidebar div#suche input#s {
+		width: 10.5em;
+		padding: 4px 3px;
+		float: left;
+	}
+	
+	div#sidebar div#suche h2,
+	div#sidebar div#suche p label {
+		position:absolute;
+		left:-3000px;
+		top:-3000px;
+		width:1px;
+	}
+	
+	div#sidebar div#suche:after {
+	    clear: both;
+	    content: ".";
+	    display: block;
+	    font-size: 0;
+	    height: 0;
+	    visibility: hidden;
 	}
 }
 
@@ -129,6 +151,20 @@
 	    margin: 0;
 	    padding: 10px;
 	}
+	
+	div#sidebar div#suche input#s {
+		width: 12em;
+		padding: 4px 3px;
+		float: left;
+		margin-right: 5px;
+	}
+	
+	div#sidebar div#suche input[type="submit"] {
+	    float: none;
+	    padding: 3px;
+	}
+	
+	
 	/*  ------------------------------------------------------
 	CONTENT
 	--------------------------------------------------------*/

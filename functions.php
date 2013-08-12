@@ -930,15 +930,13 @@ function get_wke2014_anmeldebuttons() {
       if (isset($options['aktiv-buttons']) && ($options['aktiv-buttons']==1)) {
 	  if (isset($options['aktiv-anmeldebutton']) && ($options['aktiv-anmeldebutton']==1)
               && isset($options['url-anmeldebutton']) ) {
-	      echo '<div class="button breit gross '.$options['color-anmeldebutton'].'">';
-	      echo '<a href="'.$options['url-anmeldebutton'].'">'.$options['title-anmeldebutton'].'</a></div>';
+	      echo '<a href="'.$options['url-anmeldebutton'].'" class="button breit gross '.$options['color-anmeldebutton'].'">'.$options['title-anmeldebutton'].'</a>';
 	      echo "\n";
 	   }
       
 	  if (isset($options['aktiv-cfpbutton']) && ($options['aktiv-cfpbutton']==1)
               && isset($options['url-cfpbutton']) ) {
-	      echo '<div class="button breit gross '.$options['color-cfpbutton'].'">';
-	      echo '<a href="'.$options['url-cfpbutton'].'">'.$options['title-cfpbutton'].'</a></div>';
+	      echo '<a href="'.$options['url-cfpbutton'].'" class="button breit gross '.$options['color-cfpbutton'].'">'.$options['title-cfpbutton'].'</a>';
 	      echo "\n";
 	   }
       }

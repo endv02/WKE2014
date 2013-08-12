@@ -292,10 +292,6 @@
 	
 	div#kopf div#suche input {
 		font-size: 0.7em;
-		padding: 1px 2px;
-		position: absolute;
-		top:0;
-		right:0;
 		background: #fff;
 		border: #666 1px solid;
 		color: #333;
@@ -303,8 +299,8 @@
 	
 	div#kopf div#suche input:active,
 	div#kopf div#suche input:focus {
-		background:#EEEFF1;
-		border: #999 1px solid;
+		border: 1px solid #0094D4;
+		box-shadow: 0 0 5px rgba(21, 98, 166, 0.5);
 	}
 	
 	/*Hack Opera + Safari*/
@@ -313,12 +309,15 @@
 	}
 	
 	div#kopf div#suche input#s {
-		padding: 2px 4px;
-		position: absolute;
-		top:0;
-		left:0;
 		width: 11.8em;
+		padding: 4px;
+		float: left;
 	}
+	div#kopf div#suche input[type="submit"] {
+	    float: right;
+	}
+	
+	
 	
 	/*  ------------------------------------------------------
 	NACHKOPF
