@@ -500,7 +500,6 @@ label {
 
 input, textarea, select {
     padding: 3px 4px;
-    font: 90% "Verdana", "Arial",  sans-serif;
     background: #fff;
     border: 1px solid #A4ABB3;
     color: #2F2F2F;
@@ -518,8 +517,8 @@ input.checkbox {
 input:active, input:focus, 
 textarea:active, textarea:focus, 
 select:active, select:focus {
-    background: #A4ABB3;
-    color: #FFFFFF;
+    border: 1px solid #0094D4;
+    box-shadow: 0 0 5px rgba(21, 98, 166, 0.5);
 }
 
 form input#submit1, 
@@ -538,20 +537,18 @@ html:first-child>b\ody form input#submit2 {
 }
 
 form fieldset {
-    width: 80%;
+    width: 90%;
     display: block;
     margin: 4px 0 30px 0;
-    padding: 5px;
+    padding: 10px 20px;
     border: 1px solid #A4ABB3;
-    background-color: #eaf0f6;
+    background-color: #f6f8fb;
 }
 
-form fieldset div.abstand {
-    padding: 10px 20px 10px 20px;
-}
 form fieldset legend {
-    margin: 0 0 0 24px;
-    color: #003366;
+    margin: 0 0 0 20px;
+    color: #0d396a;
+    font-size: .9em;
 }
 
 form fieldset p, 
@@ -846,10 +843,7 @@ h4, h5, h6 {
 /*  ------------------------------------------------------
 Definitionen fuer allgemeine Formulare
 --------------------------------------------------------*/
-form fieldset legend {
-    font: 1em "Tahoma", "Verdana", "Arial", sans-serif;
-    letter-spacing: 0.1em;
-}
+
 
 /*  ------------------------------------------------------
 GLOSSAR

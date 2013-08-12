@@ -68,7 +68,7 @@
 	#sidebar .widget {
 	    border: 1px solid #CCC;
 	    margin-bottom: 24px;
-	    padding: 1em;
+	    padding: 10px;
 	}
 	
 	#sidebar .feedeintrag {
@@ -84,6 +84,20 @@
 		visibility:hidden;
   	}
 	
+	div#main div#sidebar div.slickr-flickr-gallery {
+	    padding: 0;
+	}
+	
+	div#main div#sidebar div.slickr-flickr-gallery ul {
+	    margin-left: 0;
+	}
+	
+	div#main div#sidebar .slickr-flickr-gallery ul li {
+	    margin: 3px;
+	}
+	div#main div#sidebar .slickr-flickr-gallery img {
+	    padding: 3px;
+	}
 }
 
 /*  ------------------------------------------------------------------------------------------------------------
@@ -94,28 +108,23 @@
 @media screen and (max-width: 960px) {
     /* Definitionen nur für maximale Fenster- bzw. Bildschirmbreite von 768px - Standard für Tablets */
  
-	div#main div#sidebar {
-		float: none;
-		margin: 10.9em 20px 0 16.6em;
-		width: 300px;
-		min-height: 0;
-		width: auto;
- 	}
 	div#kopf div#titel {
 		padding-right: 10px;
 	}
+	
+	#menu {
+	    	padding-bottom: 510px;
+	}
+	
 	/*  ------------------------------------------------------
 	SIDEBAR
 	--------------------------------------------------------*/
 	
-	aside {
+	div#main div#sidebar {
 	    position: absolute;
 	    bottom: 0px;
 	    height: 500px;
 	    overflow-y: scroll;
-	    border-top: 1px solid #ccc;
-	}
-	div#main div#sidebar {
 	    width: 97%;
 	    margin: 0;
 	    padding: 10px;
@@ -141,4 +150,4 @@
 	    width: 90%
     }
     
-};
+}
