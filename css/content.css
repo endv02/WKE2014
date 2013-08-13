@@ -157,6 +157,7 @@
     ADDRESS
     --------------------------------------------------------*/
     address {  
+        font-size: 0.76em;
         font-style: normal;
         margin: 0 0 20px 0;
     } 
@@ -181,11 +182,15 @@
         color: #333;
     } 
 
-    div#content ul li {
+    div#content ul li,
+    div#content ol li {
         line-height:180%;
     }
 
-    div#content ul li p {
+    div#content ol * ul,
+    div#content ul * ul,
+    div#content ol * p,
+    div#content ul * p {
         font-size: 1em;
     }
 
@@ -307,12 +312,13 @@
     ul {list-style-type: none;} 
 
     div#content ul {  
-        margin: 10px 20px 30px 20px;
+        margin: 10px 20px;
         font-size: 0.76em;
         list-style-type: disc;
     } 
 
-    div#content ul ul {  
+     div#content ul ul,
+     div#content ol ul {  
         margin: 0 0 0 20px;
         font-size: 1em;
     } 
@@ -323,10 +329,10 @@
     div#content ol {
         margin: 10px 20px 30px 30px;
         font-size: 0.76em;
-        list-style-type:upper-roman;
     }
 
-    div#content ol ol {
+     div#content ul ol,
+     div#content ol ol {
         margin: 0 0 0 20px;
         font-size: 1em;
     }
@@ -366,33 +372,48 @@ Bilder im Inhaltsbereich
 --------------------------------------------------------*/
 #content p img {
     display: inline;
-    float: left; 
-    margin: 8px 8px 8px 0px;
 }
-#content p a img {
-    display: inline;
-    float: none; 
-    margin: 0px;
-}
+div#content .alignleft,
 div#content .bildlinks {
     display: inline;
     float: left;
-    margin: 8px;
+    margin: 10px 10px 10px 0;
 }
+div#content .alignright,
 div#content .bildrechts {
     display: inline;
     float: right;
-    margin: 8px;
+    margin: 10px 0 10px 10px;
+}
+
+div#content .aligncenter {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div#content img{ 
-	max-width: 100%; 
-	height: auto; 
+    max-width: 100%; 
+    height: auto; 
+}
+
+div#content .wp-caption {
+    max-width: 100%;
 }
 div#content .wp-caption-text {
     font-style: italic;
+    text-align: left;
 }
 
+/*  ------------------------------------------------------
+Videos im Inhaltsbereich
+--------------------------------------------------------*/
+embed {
+    max-width: 100%;
+}
+
+iframe {
+    max-width: 100%;
+}
 /*  ------------------------------------------------------
 TABELLEN
 --------------------------------------------------------*/
@@ -1056,4 +1077,37 @@ div#content .columns hr.trenner {
 div#content .sticky {
     border: 1px solid #0094D4;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+div#content .column1 .sticky,
+div#content .column2 .sticky {
+    width: 99%;
+}
+
+.post-meta {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+div#content .post-meta p {
+    margin-bottom: 0;
+}
+.post-comments {
+    margin-top: 20px;
+}
+
+/*  ------------------------------------------------------
+GALERIE 
+--------------------------------------------------------*/
+
+.gallery-columns-3 .gallery-item {
+    width: 33%;
+    float: left;
+}
+
+.gallery-columns-4 .gallery-item {
+    width: 25%;
+    float: left;
 }

@@ -37,6 +37,7 @@
 		margin-bottom: 0.5em;
 		font-size: 0.9em;
 		color: #fff;
+		line-height: 130%;
 	}
 	
 	div#footer div#footerinfos div#zusatzinfo h2 a,
@@ -58,7 +59,8 @@
 	div#footer div#footerinfos div#zusatzinfo li {
 		color: #fff;
 		font-size: 0.76em;
-		line-height: 180%;
+		line-height: 130%;
+		margin-bottom: 5px;
 	}
 	
 	div#footer div#footerinfos  div#zusatzinfo a,
@@ -88,4 +90,22 @@
 		width: 1px;
 	}
 		
+}
+
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  960px
+--------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 960px) {
+    
+    div#footer div#footerinfos div#zusatzinfo {
+    	padding-left: 10.6em;
+	padding-right: 10px;
+    }
+    
+    div#footer div#footerinfos div#flaggen, 
+    div#footer div#footerinfos div.flaggen, 
+    div#footer div#footerinfos div#languagebar {
+    	top: 170px;
+    }
+    
 }

@@ -59,11 +59,6 @@
 		padding-left: 0;	
  	}
  	
- 	div#main {
- 		padding-top: 0;
- 	}
- 	
- 	
  	/*  ------------------------------------------------------
 	HEADER
 	--------------------------------------------------------*/
@@ -147,15 +142,24 @@
 	--------------------------------------------------------*/
 	
 	div#main {
+ 		padding: 0;
+		position: relative;
+		top: 50px;
+ 	}
+	
+	div#content {
+	    padding-top: 4em;
 	}
-	/*  ------------------------------------------------------
+	
+ 	
+ 	/*  ------------------------------------------------------
 	MENU
 	--------------------------------------------------------*/
 	
 	div#menu {
 		width: 10.6em;
 		margin-left: 10px;
-		margin-top: 55px;
+		margin-top: 5px;
 	}
 	
 	div#menu div#bereichsmenu li a,
@@ -180,15 +184,15 @@
 	FOOTER
 	--------------------------------------------------------*/
     
-    div#footer div#footerinfos div#zusatzinfo {
-    	padding-right: 10px;
+    div#footer {
+	position: relative;
+	top: 50px;
     }
     
-    div#footer div#footerinfos div#flaggen, 
-    div#footer div#footerinfos div.flaggen, 
-    div#footer div#footerinfos div#languagebar {
-    	top: 170px;
+    div#footer div#footerinfos div#tecmenu {
+	width: 9em;
     }
+    
 }
 
 /*  ------------------------------------------------------------------------------------------------------------
@@ -295,6 +299,7 @@
 		position: relative;
 		background-image: none;
 		height: auto;
+		border-bottom: none !important;
 	}
 	
 	div#kopf div#logo {
@@ -356,16 +361,16 @@
 	div#kopf div#titel h1 {
 		font-size: 1.1em;
 		font-weight: bold;
-		line-height: 100%;
+		line-height: 130%;
 		margin: 15px 0 10px 10px;
 	}
 	
 	div#kopf div#suche {
 		position: relative;
-		top: auto;
+		top: 0;
 		right: 0;
-		bottom: auto;
-		left: auto;
+		bottom: 0;
+		left: 0;
 		text-align: right;
 		background-color: transparent;
 		width: 95%;
@@ -378,22 +383,17 @@
 		white-space: nowrap;
 	}
 	
-	div#kopf div#suche input#suchbegriff {
-		width: 16em;
-		max-width: 70%;
-		position: static;
-		top: auto;
-		right: auto;
-		left: auto;
+	div#kopf div#suche input#s {
+		width: 70%;
 		text-overflow: ellipsis;
+		float: none;
+		display: inline-block;
 	}
 	
 	div#kopf div#suche input[type="submit"] {
-		max-width: 20%;
-		position: static;
-		top: auto;
-		right: auto;
-		left: auto;
+		width: 20%;
+		float: none;
+		display: inline-block;
 	}
 	
 	div#kopf div#breadcrumb {
@@ -505,12 +505,12 @@
 	--------------------------------------------------------*/
 	
 	div#main {
+		top: 10px;
 		border: 0;
 		min-height: 0;
 		padding-left: 0;
 		background: none;
-		padding: 10px 0 0 0;
-		border-top: none !important;
+		padding: 0;
 	}
 	
 	div#menu {
@@ -520,6 +520,7 @@
 		clear: both;
 		padding-top: 10px;
 		position: static;
+		padding-bottom: 0;
 	}
 	
 	div#menu div#bereichsmenu {
@@ -568,7 +569,6 @@
 		margin-top: 10px;
 	}
 	
-	
 	/*  ------------------------------------------------------
 	SIDEBAR
 	--------------------------------------------------------*/
@@ -583,17 +583,18 @@
 	--------------------------------------------------------*/
 	
 	div#footer {
-		padding: 0;
+		top: 0;
+	        padding: 0;
 		margin-left: 0;
 	}
 	
 	div#footer div#footerinfos div#tecmenu {
-		margin-left: 0;
-		position: static;
-		text-align: left;
+		float: none;
 		width: auto;
-		right: 0;
-		font-size: 90%;
+		margin-left: 0;
+		padding: 10px;
+		border-right: none;
+		text-align: right;
 		white-space: normal;
 		line-height: 160%;
 	}
@@ -609,11 +610,9 @@
 		font-weight: normal;
 	}
 	
-	div#footer div#footerinfos div#tecmenu ul {
-		margin-left: 10px;
-	}
-	
-	div#footer div#footerinfos div#tecmenu ul li span, div#footer div#footerinfos div#tecmenu ul li a, div#footer div#footerinfos div#tecmenu ul li a:link {
+	div#footer div#footerinfos div#tecmenu ul li span, 
+	div#footer div#footerinfos div#tecmenu ul li a, 
+	div#footer div#footerinfos div#tecmenu ul li a:link {
 		padding-left: 0;
 	}
 	

@@ -48,6 +48,8 @@
 		background-position: top right;
 		background-repeat: no-repeat;
 		height: 200px;
+		border-bottom: 3px solid #66b32d;
+		
 	}
 	
 	
@@ -330,8 +332,6 @@
 	MAIN
 	--------------------------------------------------------*/
 	div#main {
-		border-top: 3px solid #66b32d;
-		/*background: url(../images/border_header.png) top left repeat-x;*/
 		padding: 0 0 20px 0;
 	}
 	
@@ -538,6 +538,14 @@
 		clear: both;
 		padding: 10px 25px 25px;
 		background: #A4ABB3;
+	}
+	div#footer:after {
+	    clear: both;
+	    content: ".";
+	    display: block;
+	    font-size: 0;
+	    height: 0;
+	    visibility: hidden;
 	}
 	
 	div#footer h2 {

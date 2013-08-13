@@ -236,9 +236,18 @@
 	.column1 .withvideo iframe,
 	.column2 .withvideo iframe {
 	    width: 100% !important;
-	    height: auto !important;
 	}
 	.column2 .withvideo .ym-col3 { margin: 0 }
+	
+	.usefloating .ym-col1 {
+	    margin-right: 5px;
+	    margin-bottom: 5px;
+	}
+	.usefloating .ym-col1 + .ym-col3,
+	.column1 .usefloating .ym-col3,
+	.column2 .usefloating .ym-col3 {
+	    margin: 0;
+	}
 	
 	/* (en) Preparation for absolute positioning within content columns */
 	/* (de) Vorbereitung für absolute Positionierungen innerhalb der Inhaltsspalten */
@@ -323,6 +332,12 @@
 	.column2 .ym-col3 {
 	    margin-left: 0;
 	}
+	
+	div#content .column1 .sticky,
+	div#content .column2 .sticky {
+	    width: 100% !important;
+	}
+		
 }
 
 @media screen and (max-width: 760px) {
@@ -339,8 +354,41 @@
 	.withvideo .ym-col1 + .ym-col3 { 
 	    margin-left: 0;
 	}
+	
+	div#content .columns hr.trenner {
+	   display: none;
+	}	
+	
+	.column1 .ym-col1,
+	.column2 .ym-col1 {
+	    float: none;
+	    width: auto;
+	}
+    
+	.column1 .ym-col3,
+	.column2 .ym-col3 {
+	    margin-left: 0;
+	}
+	div#content .column1 .sticky,
+	div#content .column2 .sticky {
+	    width: 100% !important;
+	}
 }
+    
+	
 
+@media screen and (max-width: 280px) {
+
+    .ym-cbox {
+	padding: 0;
+    }
+    
+    .sticky .ym-cbox {
+	padding: 0 10px;
+    }
+    
+    
+}
 
 
 

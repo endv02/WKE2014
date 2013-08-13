@@ -17,8 +17,9 @@
 @media screen, projection
 {
  
-	#kopf #titel {
-		padding-right: 16.6em;
+	div#kopf div#titel {
+		right: 15em;
+		padding-right: 0;
 	}
 	
 	div#main div#sidebar {
@@ -28,6 +29,7 @@
 		margin-top: 60px;
 		margin-right: 15px;
 		font-size: 0.76em;
+		background-color: #fff;
 	}
 	
 	div#main div#sidebar h2,
@@ -55,8 +57,12 @@
 	
 	#sidebar .widget {
 	    border: 1px solid #CCC;
-	    margin-bottom: 24px;
+	    margin-bottom: 20px;
 	    padding: 10px;
+	}
+	
+	#sidebar .widget:last-child {
+	    margin-bottom: 10px;
 	}
 	
 	#sidebar .feedeintrag {
@@ -131,11 +137,12 @@
     /* Definitionen nur für maximale Fenster- bzw. Bildschirmbreite von 768px - Standard für Tablets */
  
 	div#kopf div#titel {
+		right: 0;
 		padding-right: 10px;
 	}
 	
 	#menu {
-	    	padding-bottom: 510px;
+	    	padding-bottom: 520px;
 	}
 	
 	/*  ------------------------------------------------------
@@ -171,7 +178,7 @@
     
 	div#content {
 	    min-height: 0;
-	    padding-bottom: 510px;
+	    padding-bottom: 520px;
 	}
 }
 
@@ -179,11 +186,22 @@
 						BREAKPOINT  480px
 --------------------------------------------------------------------------------------------------------------*/
 	
-
 @media screen and (max-width: 480px) {
     
     div#main div#sidebar {
 	    width: 90%
+    }
+    
+}
+
+/*  ------------------------------------------------------------------------------------------------------------
+						BREAKPOINT  280px
+--------------------------------------------------------------------------------------------------------------*/
+	
+@media screen and (max-width: 280px) {
+
+    div#sidebar .widget {
+	padding: 5px;
     }
     
 }
