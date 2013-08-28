@@ -47,7 +47,6 @@
 	}
 	
 	#sidebar ul {
-		margin-left: 20px;
 		list-style-type: disc;
 	}
 	
@@ -58,7 +57,7 @@
 	#sidebar .widget {
 	    border: 1px solid #CCC;
 	    margin-bottom: 20px;
-	    padding: 10px;
+	    padding: 5px;
 	}
 	
 	#sidebar .widget:last-child {
