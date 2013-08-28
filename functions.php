@@ -237,36 +237,29 @@ endif;
 /*
  * Adds optional styles in header
  */
-function wke2014_add_basemod_styles() {
+add_action( 'wp_enqueue_scripts', function() {
     global $options;
+
+    $theme  = wp_get_theme();
+    wp_register_style( 'wke2014', get_stylesheet_uri(), array(), $theme['Version'] );
+    wp_enqueue_style( 'wke2014' );
     
-    if ( !is_admin() ) { 
-	$theme  = wp_get_theme();
-	wp_register_style( 'wke2014', get_bloginfo( 'stylesheet_url' ), false, $theme['Version'] );
-	wp_enqueue_style( 'wke2014' );
-    }    
-    if ((isset($options['aktiv-basemod_zusatzinfo'])) && ($options['aktiv-basemod_zusatzinfo']==1)) {
-	wp_enqueue_style( 'basemod_zusatzinfo', $options['src_basemod_zusatzinfo'] );
-    }
-     if ((isset($options['aktiv-basemod_links'])) && ($options['aktiv-basemod_links']==1)) {
-	wp_enqueue_style( 'basemod_links', $options['src_basemod_links'] );
-    }
-     if ((isset($options['aktiv-basemod_sidebar'])) && ($options['aktiv-basemod_sidebar']==1)) {
-	wp_enqueue_style( 'basemod_sidebar', $options['src_basemod_sidebar'] );
-    }
-      if ((isset($options['aktiv-basemod_blau'])) && ($options['aktiv-basemod_blau']==1)) {
-	wp_enqueue_style( 'basemod_blau', $options['src_basemod_blau'] );
-	
-    }
-     if ((isset($options['aktiv-socialmediabuttons'])) && ($options['aktiv-socialmediabuttons']==1)) {
-	wp_enqueue_style( 'basemod_socialmediabuttons', $options['src_socialmediabuttons'] );
-	
-    }
-   
-    
-    
-}
-add_action( 'wp_enqueue_scripts', 'wke2014_add_basemod_styles' );
+    if ((isset($options['aktiv-basemod_zusatzinfo'])) && ($options['aktiv-basemod_zusatzinfo']==1))
+        wp_enqueue_style( 'basemod_zusatzinfo', get_template_directory_uri() . '/css/basemod_zusatzinfo.css', array(), $theme['Version'] );
+
+    if ((isset($options['aktiv-basemod_links'])) && ($options['aktiv-basemod_links']==1))
+        wp_enqueue_style( 'basemod_links', get_template_directory_uri() . '/css/basemod_links.css', array(), $theme['Version'] );
+
+    if ((isset($options['aktiv-basemod_sidebar'])) && ($options['aktiv-basemod_sidebar']==1))
+        wp_enqueue_style( 'basemod_sidebar', get_template_directory_uri() . '/css/basemod_sidebar.css', array(), $theme['Version'] );
+
+    if ((isset($options['aktiv-basemod_blau'])) && ($options['aktiv-basemod_blau']==1))
+        wp_enqueue_style( 'basemod_blau', get_template_directory_uri() . '/css/basemod_blau.css', array(), $theme['Version'] );
+
+    if ((isset($options['aktiv-socialmediabuttons'])) && ($options['aktiv-socialmediabuttons']==1))
+        wp_enqueue_style( 'basemod_socialmediabuttons', get_template_directory_uri() . '/css/basemod_socialmediaicons.css', array(), $theme['Version'] );
+
+} );
 
 function wke2014_admin_head() {
     echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/admin.css" />'; 
@@ -1019,8 +1012,10 @@ function short_title($after = '...', $length = 6, $textlen = 10) {
 endif;
 
 
-
+/**
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
+ * 
+ */
     /**
      * Start the element output.
      *
@@ -1030,6 +1025,7 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
      * @param  array $args    Additional strings.
      * @return void
      */
+/**
     public function start_el( &$output, $item, $depth, $args ) {
         if ( '-' === $item->title )
         {
@@ -1039,7 +1035,10 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
             parent::start_el( $output, $item, $depth, $args );
         }
     }
+ * 
+ */
     /* Klasse has_children einfuegen */
+/**
     public function display_element($el, &$children, $max_depth, $depth = 0, $args, &$output){
         $id = $this->db_fields['id'];
 
@@ -1049,10 +1048,12 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
         parent::display_element($el, $children, $max_depth, $depth, $args, $output);
     }
 }
+ * 
+ */
 
 
 /* Interne Links relativ ausgeben */
-
+/**
 add_action( 'template_redirect', 'rw_relative_urls' );
     function rw_relative_urls() {
     // Don't do anything if:
@@ -1080,3 +1081,5 @@ add_action( 'template_redirect', 'rw_relative_urls' );
     add_filter( $filter, 'wp_make_link_relative' );
     }
     }
+ * 
+ */
