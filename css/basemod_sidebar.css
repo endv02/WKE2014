@@ -52,6 +52,14 @@
 	
 	#sidebar ul li {
 		margin-bottom: 3px;
+		list-style-position: inside; 
+	}
+	#sidebar ul.wp-tag-cloud {
+	    text-align: center;
+	}    
+	#sidebar ul.wp-tag-cloud li {
+	    display: inline;
+	    list-style-type: none;
 	}
 	
 	#sidebar .widget {

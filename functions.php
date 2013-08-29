@@ -239,34 +239,42 @@ endif;
  */
 add_action( 'wp_enqueue_scripts', function() {
     global $options;
-
+    global $defaultoptions;
+    
     $theme  = wp_get_theme();
     wp_register_style( 'wke2014', get_stylesheet_uri(), array(), $theme['Version'] );
     wp_enqueue_style( 'wke2014' );
     
     if ((isset($options['aktiv-basemod_zusatzinfo'])) && ($options['aktiv-basemod_zusatzinfo']==1))
-        wp_enqueue_style( 'basemod_zusatzinfo', get_template_directory_uri() . '/css/basemod_zusatzinfo.css', array(), $theme['Version'] );
+        wp_enqueue_style( 'basemod_zusatzinfo', get_template_directory_uri() . $defaultoptions['src_basemod_zusatzinfo'], array(), $theme['Version'] );
 
     if ((isset($options['aktiv-basemod_links'])) && ($options['aktiv-basemod_links']==1))
-        wp_enqueue_style( 'basemod_links', get_template_directory_uri() . '/css/basemod_links.css', array(), $theme['Version'] );
+        wp_enqueue_style( 'basemod_links', get_template_directory_uri() . $defaultoptions['src_basemod_links'], array(), $theme['Version'] );
 
     if ((isset($options['aktiv-basemod_sidebar'])) && ($options['aktiv-basemod_sidebar']==1))
-        wp_enqueue_style( 'basemod_sidebar', get_template_directory_uri() . '/css/basemod_sidebar.css', array(), $theme['Version'] );
+        wp_enqueue_style( 'basemod_sidebar', get_template_directory_uri() . $defaultoptions['src_basemod_sidebar'], array(), $theme['Version'] );
 
     if ((isset($options['aktiv-basemod_blau'])) && ($options['aktiv-basemod_blau']==1))
-        wp_enqueue_style( 'basemod_blau', get_template_directory_uri() . '/css/basemod_blau.css', array(), $theme['Version'] );
+        wp_enqueue_style( 'basemod_blau', get_template_directory_uri() . $defaultoptions['src_basemod_blau'], array(), $theme['Version'] );
 
     if ((isset($options['aktiv-socialmediabuttons'])) && ($options['aktiv-socialmediabuttons']==1))
-        wp_enqueue_style( 'basemod_socialmediabuttons', get_template_directory_uri() . '/css/basemod_socialmediaicons.css', array(), $theme['Version'] );
+        wp_enqueue_style( 'basemod_socialmediabuttons', get_template_directory_uri() . $defaultoptions['src_socialmediabuttons'], array(), $theme['Version'] );
 
 } );
+
+  
 
 function wke2014_admin_head() {
     echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/admin.css" />'; 
 }
 add_action('admin_head', 'wke2014_admin_head');
 
-
+/* Format list for Tagclouds also in widgets */
+function edit_args_tag_cloud_widget($args) {
+    $args = array('format' => 'list');
+    return $args;
+}
+add_filter('widget_tag_cloud_args','edit_args_tag_cloud_widget');
 
 /*
  * Breadcrumb
