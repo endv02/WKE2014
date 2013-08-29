@@ -99,26 +99,12 @@ $defaultoptions = array(
     'title-cfpbutton'			=> 'Vortrag einreichen',
     'color-cfpbutton'			=> 'gelb',
     
+    'aktiv-slider'			=> 1,
+    
+    
 );
 
-
-  if (isset($options['aktiv-buttons']) && ($options['aktiv-buttons']==1)) {
-	  if (isset($options['aktiv-anmeldebutton']) && ($options['aktiv-anmeldebutton']==1)
-              && isset($options['url-anmeldebutton']) ) {
-	      echo '<div class="button breit '.$options['color-anmeldebutton'].'">';
-	      echo '<a href="'.$options['url-anmeldebutton'].'">'.$options['title-anmeldebutton'].'</a></div>';
-	      echo "\n";
-	   }
-      
-	  if (isset($options['aktiv-cfpbutton']) && ($options['aktiv-cfpbutton']==1)
-              && isset($options['url-cfpbutton']) ) {
-	      echo '<div class="button breit '.$options['color-cfpbutton'].'">';
-	      echo '<a href="'.$options['url-cfpbutton'].'">'.$options['title-cfpbutton'].'</a></div>';
-	      echo "\n";
-	   }
-      }
-
-
+ 
 
 /*
  * Liste Social Media 
@@ -307,6 +293,12 @@ $setoptions = array(
                   'title'   => __( 'Autoren anzeigen', 'wke2014' ),
                   'label'   => __( 'Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken.', 'wke2014' ),
                   'default' => $defaultoptions['aktiv-autoren'],
+              ),
+	       'aktiv-slider' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Slider', 'wke2014' ),
+                  'label'   => __( 'Bilder im Kopfteil animieren', 'wke2014' ),
+                  'default' => $defaultoptions['aktiv-slider'],
               ),
 	     'buttons'  => array(
 		      'type'    => 'section',

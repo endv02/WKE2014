@@ -21,58 +21,66 @@ global $options;
       <a name="seitenmarke" id="seitenmarke"></a>
       
       <header><div id="kopf">  <!-- begin: kopf -->   
-		  	<div id="logo">
-                		<p>				
-				<?php if ( ! is_home() ) { ?>
-				    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo $options['default_text_title_home_backlink']; ?>" rel="home" class="logo">
-				<?php } ?>                                                             
-                                <img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>">
-                            <?php                                
-                            if ( ! is_home() ) { ?> </a>  <?php } ?>
-				</p>
-				
-			</div>
-			<?php if ( is_active_sidebar( 'headerbox-area' ) ) { 
-			    dynamic_sidebar( 'headerbox-area' ); 
-			 } elseif (isset($options['headerbox-datum']) && isset($options['headerbox-title'])) { ?>
-			     <div id="header-box">
-				<div class="wrapper">
-				    <p class="datum"><?php echo $options['headerbox-datum']; ?></p>
-				    <p class="titel"><?php echo $options['headerbox-title']; ?></p>
-				</div>
-			    </div>
-			<?php } ?>
-			
-			<?php get_search_form(); ?>
-			
-			<div id="titel">
-				<h1><?php wke2014_contenttitle(); ?></h1> 
-			</div>       
-			
+	     <?php if ($options['aktiv-slider']==1) { ?>
+	    <div id="headerimgs">
+		<div id="control" class="btn"></div>
+		<div id="headerimg1" class="headerimg"></div>
+		<div id="headerimg2" class="headerimg"></div>
+	    </div>
+	     <?php } ?>
+	     
+	    <div id="logo">
+		    <p>				
+		    <?php if ( ! is_home() ) { ?>
+			<a href="<?php echo home_url( '/' ); ?>" title="<?php echo $options['default_text_title_home_backlink']; ?>" rel="home" class="logo">
+		    <?php } ?>                                                             
+		    <img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>">
+		<?php                                
+		if ( ! is_home() ) { ?> </a>  <?php } ?>
+		    </p>
+
+	    </div>
+	    <?php if ( is_active_sidebar( 'headerbox-area' ) ) { 
+		dynamic_sidebar( 'headerbox-area' ); 
+	     } elseif (isset($options['headerbox-datum']) && isset($options['headerbox-title'])) { ?>
+		 <div id="header-box">
+		    <div class="wrapper">
+			<p class="datum"><?php echo $options['headerbox-datum']; ?></p>
+			<p class="titel"><?php echo $options['headerbox-title']; ?></p>
+		    </div>
+		</div>
+	    <?php } ?>
+
+	    <?php get_search_form(); ?>
+
+	    <div id="titel">
+		    <h1><?php wke2014_contenttitle(); ?></h1> 
+	    </div>       
+
 	      
 			
 		 
-        <div id="breadcrumb">
-          	<h2>Sie befinden sich hier: </h2>
-		  	<p>			    
-			    <?php if (function_exists('wke2014_breadcrumbs')) wke2014_breadcrumbs(); ?>
-			</p>
-        </div>               
-        <div id="sprungmarken">
-          <h2>Sprungmarken</h2>
-          <ul>
-	            <li class="first"><a href="#contentmarke">Zum Inhalt springen</a><span class="skip">. </span></li>
-				<li><a href="#bereichsmenumarke">Zur Navigation springen</a><span class="skip">. </span></li>		
-				<li class="last"><a href="#hilfemarke">Zu den allgemeinen Informationen springen</a><span class="skip">. </span></li>            
-          </ul>
-        </div>
-	<?php if ( has_nav_menu( 'targetmenue' ) ) { ?>
-	    <nav id="zielgruppen-menue" class="zielgruppen-menue" role="navigation">
-		<?php wp_nav_menu( array( 'theme_location' => 'targetmenue', 'fallback_cb' => '', 'depth' => 1 ) );?>
-	    </nav><!-- #target-navigation -->
-         <?php } ?> 	  
+	    <div id="breadcrumb">
+		    <h2>Sie befinden sich hier: </h2>
+			    <p>			    
+				<?php if (function_exists('wke2014_breadcrumbs')) wke2014_breadcrumbs(); ?>
+			    </p>
+	    </div>               
+	    <div id="sprungmarken">
+	      <h2>Sprungmarken</h2>
+	      <ul>
+			<li class="first"><a href="#contentmarke">Zum Inhalt springen</a><span class="skip">. </span></li>
+				    <li><a href="#bereichsmenumarke">Zur Navigation springen</a><span class="skip">. </span></li>		
+				    <li class="last"><a href="#hilfemarke">Zu den allgemeinen Informationen springen</a><span class="skip">. </span></li>            
+	      </ul>
+	    </div>
+	    <?php if ( has_nav_menu( 'targetmenue' ) ) { ?>
+		<nav id="zielgruppen-menue" class="zielgruppen-menue" role="navigation">
+		    <?php wp_nav_menu( array( 'theme_location' => 'targetmenue', 'fallback_cb' => '', 'depth' => 1 ) );?>
+		</nav><!-- #target-navigation -->
+	     <?php } ?> 	  
 	  
-	  </div></header>  <!-- end: kopf -->
+	</div></header>  <!-- end: kopf -->
       	<hr id="nachkopf" />  
 		<div id="main">  <!-- begin: main -->
       		<div id="menu">  <!-- begin: menu -->	  

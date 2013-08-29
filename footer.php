@@ -39,6 +39,7 @@
 	
     </div>  <!-- end: seite -->
   </div>  <!-- end: page_margins  -->
+  
     <?php wp_footer(); ?>
     </body> <!-- end: body -->
 </html>

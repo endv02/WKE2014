@@ -1,0 +1,27 @@
+/* 
+    Document   : basemod_slider
+    Created on : 29.08.2013, 16:26:51
+    Author     : unrz59
+    Description:
+        Slider im Kopfteil
+*/
+
+
+.headerimg { background-position: left top; 
+	      background-repeat: no-repeat; 
+		width:834px; 
+		height:200px; 
+		position: absolute; 
+		top: 0; 
+		left: 366px;  }
+
+/* CONTROLS */
+#control { 
+    position: absolute;
+    left: 374px;
+    top: 10px;
+    background-image:url("../images/btn_pause.png"); 
+    z-index: 10;
+}
+.btn { height:32px; width:32px; float:left; cursor:pointer; }
+

@@ -160,19 +160,14 @@ endif;
 
 require( get_template_directory() . '/inc/widgets.php' );
 
-/* 
+/*
 function wke2014_scripts() {
     global $options;
     global $defaultoptions;
 
 
-    wp_enqueue_script(
-		'layoutjs',
-		$defaultoptions['src-layoutjs'],
-		array('jquery'),
-                $defaultoptions['js-version']
-	);
- 
+    wp_enqueue_script('jquery',false,array(),false,true);
+    
     if (is_singular() && ($options['aktiv-commentreplylink']==1) && get_option( 'thread_comments' )) {        
             wp_enqueue_script(
 		'comment-reply',
@@ -185,8 +180,8 @@ function wke2014_scripts() {
                    
 }
 add_action('wp_enqueue_scripts', 'wke2014_scripts');
-*/
 
+*/
 
 
 /* Refuse spam-comments on media */
@@ -259,7 +254,12 @@ add_action( 'wp_enqueue_scripts', function() {
 
     if ((isset($options['aktiv-socialmediabuttons'])) && ($options['aktiv-socialmediabuttons']==1))
         wp_enqueue_style( 'basemod_socialmediabuttons', get_template_directory_uri() . $defaultoptions['src_socialmediabuttons'], array(), $theme['Version'] );
-
+    
+    if ($options['aktiv-slider']==1) {
+	wp_enqueue_style( 'basemod_slider', get_template_directory_uri() . '/css/basemod_slider.css', array(), $theme['Version'] );
+	wp_enqueue_script('jquery',false,array(),false,1);
+	wp_enqueue_script( 'slider', get_template_directory_uri() . '/js/slider.js', array('jquery'), '1.0.0', true );
+    }
 } );
 
   
