@@ -44,7 +44,7 @@
 	KOPF
 	--------------------------------------------------------*/	
 	div#kopf  {
-		background: url(../images/header_wke2014_1.png);
+		background: url(../images/01_header_wke_834x200.png);
 		background-position: top right;
 		background-repeat: no-repeat;
 		height: 200px;
@@ -58,9 +58,8 @@
 	--------------------------------------------------------*/	
 	div#kopf div#logo  {
 		height: 200px;
-		width: 25%;
-		max-width: 345px;
-		padding: 0 10px;
+		width: 366px;
+		padding: 0;
 		background: #ffffff;
 	}
 	
@@ -69,10 +68,11 @@
 		background: #ffffff;
 		display: block ; 
 		margin: 0 auto;
+		padding: 0;
 	}
 	
 	div#kopf div#logo p {
-		padding: 47px 0;	
+		padding: 40px 73px;	
 	}
 	div#kopf div#logo p .description {
 		  display: block;

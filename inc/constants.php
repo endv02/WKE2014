@@ -27,9 +27,9 @@ $defaultoptions = array(
     
     'logo'			    => get_template_directory_uri() . '/images/wke_logo_2014_gruen.png',
     'logo_gruen'		    => get_template_directory_uri() . '/images/wke_logo_2014_gruen.png',
-    'logo_blau'			    => get_template_directory_uri() . '/images/wke_logo_2014_blau.png',
-    'logo-width'		    => 170,
-    'logo-height'		    => 106,
+    'logo_blau'			    => get_template_directory_uri() . '/images/wke_logo_200x124.png',
+    'logo-width'		    => 200,
+    'logo-height'		    => 124,
     'background-header-color'	    => 'ffffff',
     'background-header-image'	    => '',
     
