@@ -42,7 +42,6 @@ global $options;
   </div>  <!-- end: page_margins  -->
   <?php if ($options['aktiv-slider']==1) { ?>
 
-            ?>
 	<script type="text/javascript">
         /* <![CDATA[ */
 	  var slideshowSpeed = 2000;
