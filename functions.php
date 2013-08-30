@@ -160,28 +160,6 @@ endif;
 
 require( get_template_directory() . '/inc/widgets.php' );
 
-/*
-function wke2014_scripts() {
-    global $options;
-    global $defaultoptions;
-
-
-    wp_enqueue_script('jquery',false,array(),false,true);
-    
-    if (is_singular() && ($options['aktiv-commentreplylink']==1) && get_option( 'thread_comments' )) {        
-            wp_enqueue_script(
-		'comment-reply',
-		$defaultoptions['src-comment-reply'],
-		false,
-                $defaultoptions['js-version']
-	);  
-     }        
-   
-                   
-}
-add_action('wp_enqueue_scripts', 'wke2014_scripts');
-
-*/
 
 
 /* Refuse spam-comments on media */
@@ -1061,14 +1039,14 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 
 /* Interne Links relativ ausgeben */
-/**
+
 add_action( 'template_redirect', 'rw_relative_urls' );
     function rw_relative_urls() {
     // Don't do anything if:
     // - In feed
     // - In sitemap by WordPress SEO plugin
     if ( is_feed() || get_query_var( 'sitemap' ) )
-    return;
+	 return;
     $filters = array(
     'post_link',
     'post_type_link',
@@ -1083,11 +1061,10 @@ add_action( 'template_redirect', 'rw_relative_urls' );
     'day_link',
     'month_link',
     'year_link',
+
     );
     foreach ( $filters as $filter )
     {
     add_filter( $filter, 'wp_make_link_relative' );
     }
     }
- * 
- */
