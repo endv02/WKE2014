@@ -23,7 +23,7 @@ global $options;
       <header><div id="kopf">  <!-- begin: kopf -->   
 	     <?php if ($options['aktiv-slider']==1) { ?>
 	    <div id="headerimgs">
-		<div id="control" class="btn"></div>
+		<div id="control" class="btn"><a href="#toggle">&nbsp;</a></div>
 		<div id="headerimg1" class="headerimg"></div>
 		<div id="headerimg2" class="headerimg"></div>
 	    </div>

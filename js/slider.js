@@ -1,12 +1,11 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/*
+ * Script fuer den WKE2014 zur Aktivierung verschiedener Hintergruende im 
+ * Kopfteil der Seite bei Nutzung eines Screens mit Mindestens 1200 Pixel
+ * Breite.
  */
 
-
-
 // Speed of the automatic slideshow
-var slideshowSpeed = 15000;
+var slideshowSpeed = 100;
 
 // Variable to store the images we need to set as background
 // which also includes some text and url's.
@@ -22,14 +21,30 @@ var photos = [ {
 ];
 
 var uripath = '/wp-content/themes/WKE2014';
-
+var minscreenwidth = 1199;
+ 
+	   
 jQuery(document).ready(function($) {
+  if ($(window).width() > minscreenwidth) { 
+      $(".btn").html('<a href="#toggle"><img src="'+uripath+'/images/btn_pause.png" alt="Stop Animation"></a>');
+    
 	var interval;
+	$("#control").click(function() {$(".btn").keypress();});	
+	$(document).keypress(function(e){
+	    if ($(e.target).is('input, textarea')) {
+	       return;   
+	    }
+	    var key = e.which;
+	    if (key == 116) {
+	    // if the user pressed 't' (for 'toggle'):
+	    $('#control').click();
+	    }
+	});
+
 	$("#control").toggle(function(){
 		stopAnimation();
 	}, function() {
-		// Change the background image to "pause"
-		$(this).css({ "background-image" : "url("+uripath+"/images/btn_pause.png)" });
+		$(".btn").html('<a href="#toggle"><img src="'+uripath+'/images/btn_pause.png" alt="Stop Animation"></a>');
 		
 		// Show the next image
 		navigate("next");
@@ -40,7 +55,6 @@ jQuery(document).ready(function($) {
 		}, slideshowSpeed);
 	});
 	
-	
 	var activeContainer = 1;	
 	var currentImg = 0;
 	var animating = false;
@@ -48,20 +62,12 @@ jQuery(document).ready(function($) {
 		// Check if no animation is running. If it is, prevent the action
 		if(animating) {
 			return;
+		}		
+		currentImg++;
+		if(currentImg == photos.length + 1) {
+			currentImg = 1;
 		}
 		
-		// Check which current image we need to show
-		if(direction == "next") {
-			currentImg++;
-			if(currentImg == photos.length + 1) {
-				currentImg = 1;
-			}
-		} else {
-			currentImg--;
-			if(currentImg == 0) {
-				currentImg = photos.length;
-			}
-		}
 		
 		// Check which container we need to use
 		var currentContainer = activeContainer;
@@ -98,18 +104,20 @@ jQuery(document).ready(function($) {
 	
 	var stopAnimation = function() {
 		// Change the background image to "play"
-		$("#control").css({ "background-image" : "url("+uripath+"/images/btn_play.png)" });
+		$(".btn").html('<a href="#toggle"><img src="'+uripath+'/images/btn_play.png" alt="Starte Animation"></a>');
 		
 		// Clear the interval
 		clearInterval(interval);
 	};
 	
-	// We should statically set the first image
-	navigate("next");
 	
-	// Start playing the animation
-	interval = setInterval(function() {
+	    // We should statically set the first image
+	    navigate("next");
+	
+	    // Start playing the animation
+	    interval = setInterval(function() {
 		navigate("next");
-	}, slideshowSpeed);
-	
+	    }, slideshowSpeed);
+	}	
 });
+

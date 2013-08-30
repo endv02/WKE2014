@@ -15,13 +15,26 @@
 		top: 0; 
 		left: 366px;  }
 
-/* CONTROLS */
 #control { 
     position: absolute;
     left: 374px;
     top: 10px;
-    background-image:url("../images/btn_pause.png"); 
     z-index: 10;
 }
-.btn { height:32px; width:32px; float:left; cursor:pointer; }
 
+.btn a {
+    margin: 0;
+    padding: 0;
+    line-height: 32px;
+    border: 1px solid transparent; 
+}
+.btn a img {   
+    display: inline;   
+       margin: 0;
+    padding: 0; 
+}
+.btn a:focus, .btn a:hover {
+    background-color: #0094D4;
+    border: 1px solid #036; 
+    
+}
