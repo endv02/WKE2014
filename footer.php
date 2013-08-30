@@ -2,6 +2,7 @@
 /* 
  * Footer
  */
+global $options;
 ?>
 
 
@@ -39,7 +40,18 @@
 	
     </div>  <!-- end: seite -->
   </div>  <!-- end: page_margins  -->
-  
-    <?php wp_footer(); ?>
+  <?php if ($options['aktiv-slider']==1) { ?>
+
+            ?>
+	<script type="text/javascript">
+        /* <![CDATA[ */
+	  var slideshowSpeed = 2000;
+	  var uripath = '<?php echo get_template_directory_uri() ?>';
+	  var minscreenwidth = 1199;	      
+	/* ]]> */
+	</script> 
+       <?php
+	}
+     wp_footer(); ?>
     </body> <!-- end: body -->
 </html>
