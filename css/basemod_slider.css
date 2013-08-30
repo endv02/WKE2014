@@ -27,6 +27,8 @@
     padding: 0;
     line-height: 32px;
     border: 1px solid transparent; 
+    color: black;
+    background: transparent;
 }
 .btn a img {   
     display: inline;   
@@ -36,5 +38,5 @@
 .btn a:focus, .btn a:hover {
     background-color: #0094D4;
     border: 1px solid #036; 
-    
+    color: white;
 }

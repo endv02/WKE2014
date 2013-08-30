@@ -25,16 +25,6 @@
 		
 }
 
-/*  ------------------------------------------------------------------------------------------------------------
-						BREAKPOINT  1020px
---------------------------------------------------------------------------------------------------------------*/
-	
-@media screen and (max-width: 1020px) {
-	div#kopf div#logo  {
-	    width: 20%;
-	}
-	
-}
 
 /*  ------------------------------------------------------------------------------------------------------------
 						BREAKPOINT  960px
@@ -69,19 +59,20 @@
 	}
 	
 	div#kopf div#logo {
-		width: 25%;
+		width: 200px;
 		height: 135px;
 		padding-left: 0px;
 	}
 	
 	div#kopf div#logo img {
 		height: auto;
+		width: 180px;
 	}
 	
 	div#kopf div#logo p {
 		background: transparent;
 		width: auto;
-		max-width: 40%;
+		max-width: 200px;
 		padding: 20px 10px;
 		right: auto;
 		line-height: 110%;
@@ -136,7 +127,22 @@
  		left: 12.9em;
 		top: 160px;
  	}
- 	
+
+ 	div#kopf div#sprungmarken a:hover, 
+	div#kopf div#sprungmarken a:active,
+	div#kopf div#sprungmarken a:focus {
+		position: absolute;    
+		right: 0px;
+		top: 0px;		
+		height: 25px;		
+		width: 180px;
+		padding: 0 10px;
+		max-width: 180px;		
+		background: #0094D4;
+		color: white;
+
+	}
+	
  	/*  ------------------------------------------------------
 	MAIN
 	--------------------------------------------------------*/
@@ -367,15 +373,15 @@
 	
 	div#kopf div#suche {
 		position: relative;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
+		top: inherit;
+		right: inherit;
+		bottom: inherit;
+		left: inherit;
 		text-align: right;
 		background-color: transparent;
-		width: 95%;
-		max-width: 16em;
-		margin: 10px 10px 5px auto;
+		width: 90%;
+		max-width: 90%;
+		margin: 10px auto;
 		padding: 0 10px;
 	}
 	
@@ -408,42 +414,51 @@
 		bottom: auto;
 		left: auto;
 	}
-	
-	div#kopf div#sprungmarken li a:active,
-	div#kopf div#sprungmarken li a:hover,
-	div#kopf div#sprungmarken li a:focus {
-		position: absolute;
-		top: -100px;
-		right: 5px;
-		width: auto;
+	div#kopf div#sprungmarken {
+	    display: block;	
+	    position: relative;
+	    padding: 0;
+	    text-align: center;
+	    font-size: 1em;	   
+	    border: 0;		
+	   
 	}
-	
-	div#kopf div#sprungmarken li.first a:link, div#sprungmarken li.first a:visited  {
-		display: block;
+	div#kopf div#sprungmarken li {
+	    
+	}
+	div#kopf div#sprungmarken a:link, 
+	div#kopf div#sprungmarken a:visited {		
+		text-decoration: none;		
+		color: #003366;
+		height: auto;
 		position: relative;
-		width: auto;
-		height: auto;
-		font-size: 0.9em;
-		left: 0;
-		top: 10px;
-		z-index: 5;
-		padding: 7px 0px 7px 30px;
-		text-decoration: none;
-		background: url(/img/breadcrumbarrow.gif) no-repeat 10px 13px #EEE;
+		width: 100%;
+		font-size: 1em;
+		top: inherit;
+		right: inherit;
 		border-bottom: 1px solid #DDD;
-		color: #003366;
+		background-color: #eee;
+		padding: 3px 0;
+		max-width: none;
 	}
 	
-	div#kopf div#sprungmarken li.first a:hover  {
+	div#kopf div#sprungmarken li a:hover, 
+	div#kopf div#sprungmarken li a:focus  {
 		text-decoration: underline;
-		color: #003366;
-		width: auto;
 		height: auto;
-		padding: 7px 0px 7px 30px;		
-		background: url(/img/breadcrumbarrow.gif) no-repeat 10px 13px #DDD;	
-		text-align: left;
-		border: 0;		
-		border-bottom: 1px solid #DDD;
+		position: relative;
+		width: 100%;
+		font-size: 1em;
+		top: inherit;
+		right: inherit;
+		background-color: #A4ABB3;
+		color: #FFF;
+		text-decoration: none;
+		border-bottom: 1px solid #fff;
+		padding: 3px 0;		
+		overflow: auto;
+		max-width: none;
+		text-align: center;
 	}
 		
 	div#kopf div#hauptmenu {

@@ -225,8 +225,8 @@
 		padding: 0;
 		display: block;
 		position: absolute;    
-		right: 12px;
-		top: 160px;
+		left: 0px;
+		top: 0px;
 	}
 	
 	div#kopf div#sprungmarken h2 {
@@ -255,24 +255,27 @@
 		overflow:hidden;
 	}
 	
+
 	div#kopf div#sprungmarken a:hover, 
 	div#kopf div#sprungmarken a:active,
 	div#kopf div#sprungmarken a:focus {
 		white-space: nowrap;
 		position: absolute;    
-		right: 0;
-		top: 0;
+		left: 0px;
+		top: 173px;
 		text-decoration: underline;
-		padding:2px 6px 3px 6px;
-		text-align: right;
+		padding: 2px 6px 3px 20px;
+		text-align: left;
 		display: block;
-		width: 9em;
-		height:auto;
+		height: 25px;
+		width: 344px;
+		max-width: 340px;
 		font-size: 0.76em;
 		overflow:auto;
-		border: #fff 1px solid;
-		background: #e1e1e1;
-		color: #1A447E;
+		border: none;
+		background: #0094D4;
+		color: white;
+		z-index: 1999;
 	}
 	
 	/*  ------------------------------------------------------

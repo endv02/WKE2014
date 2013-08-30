@@ -21,13 +21,7 @@ global $options;
       <a name="seitenmarke" id="seitenmarke"></a>
       
       <header><div id="kopf">  <!-- begin: kopf -->   
-	     <?php if ($options['aktiv-slider']==1) { ?>
-	    <div id="headerimgs">
-		<div id="control" class="btn"><a href="#toggle">&nbsp;</a></div>
-		<div id="headerimg1" class="headerimg"></div>
-		<div id="headerimg2" class="headerimg"></div>
-	    </div>
-	     <?php } ?>
+	    
 	     
 	    <div id="logo">
 		    <p>				
@@ -69,9 +63,9 @@ global $options;
 	    <div id="sprungmarken">
 	      <h2>Sprungmarken</h2>
 	      <ul>
-			<li class="first"><a href="#contentmarke">Zum Inhalt springen</a><span class="skip">. </span></li>
-				    <li><a href="#bereichsmenumarke">Zur Navigation springen</a><span class="skip">. </span></li>		
-				    <li class="last"><a href="#hilfemarke">Zu den allgemeinen Informationen springen</a><span class="skip">. </span></li>            
+			<li class="first"><a href="#contentmarke">Zum Inhalt</a><span class="skip">. </span></li>
+			<li><a href="#bereichsmenumarke">Zur Navigation</a><span class="skip">. </span></li>		
+			<li class="last"><a href="#sidebar">Zu sonstigen Informationen</a><span class="skip">. </span></li>            
 	      </ul>
 	    </div>
 	    <?php if ( has_nav_menu( 'targetmenue' ) ) { ?>
@@ -79,7 +73,13 @@ global $options;
 		    <?php wp_nav_menu( array( 'theme_location' => 'targetmenue', 'fallback_cb' => '', 'depth' => 1 ) );?>
 		</nav><!-- #target-navigation -->
 	     <?php } ?> 	  
-	  
+		 <?php if ($options['aktiv-slider']==1) { ?>
+	    <div id="headerimgs">
+		<div id="control" class="btn"></div>
+		<div id="headerimg1" class="headerimg"></div>
+		<div id="headerimg2" class="headerimg"></div>
+	    </div>
+	     <?php } ?>
 	</div></header>  <!-- end: kopf -->
       	<hr id="nachkopf" />  
 		<div id="main">  <!-- begin: main -->
