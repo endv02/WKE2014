@@ -1068,3 +1068,41 @@ add_action( 'template_redirect', 'rw_relative_urls' );
     add_filter( $filter, 'wp_make_link_relative' );
     }
     }
+
+if ( ! function_exists( 'make_relative_site_links_in_content' ) ) :
+function make_relative_site_links_in_content($content) {
+    global $wpdb;
+        
+    $search = array(
+        'href="' . site_url(), 'src="' . site_url(),
+        'href="' . site_url('', 'https'), 'src="' . site_url('', 'https')       
+    );
+    
+    $replace = array(
+        'href="', 'src="',
+        'href="', 'src="'
+    );
+    
+    if(function_exists('get_original_url')) {
+        $original_url = get_original_url('siteurl');
+        $site_url = str_replace("https://", "http://", $original_url);
+        $site_url_ssl = str_replace("http://", "https://", $original_url);
+        $search = array_merge($search,  array(
+            'href="' . $site_url, 'src="' . $site_url,
+            'href="' . $site_url_ssl, 'src="' . $site_url_ssl     
+        ));
+
+        $replace = array_merge($replace, array(
+            'href="', 'src="',
+            'href="', 'src="'
+        ));
+    }
+    
+    return str_replace($search, $replace, $content);
+}
+endif;
+
+add_filter('the_content', function($content) {  
+  return make_relative_site_links_in_content($content);
+}, 99);
+
