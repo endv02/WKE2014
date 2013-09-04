@@ -242,10 +242,19 @@ add_action( 'wp_enqueue_scripts', function() {
 
   
 
-function wke2014_admin_head() {
-    echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/admin.css" />'; 
+
+
+function wke2014_admin_style() {
+    wp_enqueue_script('jquery');	
+    wp_enqueue_media();
+    
+    wp_register_style( 'themeadminstyle', get_template_directory_uri().'/css/admin.css' );	   
+    wp_register_script('themeadminscripts', get_template_directory_uri().'/js/admin.js', array('jquery','media-upload','thickbox'));    
+    wp_enqueue_style( 'themeadminstyle' );	
+    wp_enqueue_script('themeadminscripts');	   
 }
-add_action('admin_head', 'wke2014_admin_head');
+add_action( 'admin_enqueue_scripts', 'wke2014_admin_style' );
+
 
 /* Format list for Tagclouds also in widgets */
 function edit_args_tag_cloud_widget($args) {

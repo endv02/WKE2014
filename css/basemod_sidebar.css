@@ -45,7 +45,10 @@
 		line-height: 150%;
 		margin: 4px 0 8px 0;
 	}
-	
+	div#main div#sidebar p.bannerlink {
+	    text-align: center;
+	    margin: 0px auto;
+	}
 	#sidebar ul {
 		list-style-type: disc;
 	}

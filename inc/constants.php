@@ -10,6 +10,13 @@ $defaultoptions = array(
     'thumbnail-width'		    => 624,
     'thumbnail-height'		    => 9999,
     'content-width'                 => 625,  
+    
+    
+    'bannerlink-width'		    => 180,
+	/* Max width for Logos and Images in Sidebar */
+    'bannerlink-height'		    => 360,
+	/* Max height for Logos and Images in Sidebar */
+    
     'src_basemod_zusatzinfo'	    => '/css/basemod_zusatzinfo.css',
     'aktiv-basemod_zusatzinfo'	    => 1,    
     'src_basemod_links'		    => '/css/basemod_links.css',
