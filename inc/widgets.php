@@ -231,7 +231,7 @@ class Bannerlink_Widget extends WP_Widget {
 			       type="text" value="<?php echo esc_attr($image_url); ?>" />
 			<input type="hidden" class="image_id" id="<?php echo $this->get_field_id('image_id'); ?>" 
 			       name="<?php echo $this->get_field_name('image_id'); ?>" />
-			<input class="upload_image_button" value="<?php _e('Hochladen / Ausw&auml;hlen', 'wke2014'); ?>" type="button" />
+			<input class="upload_image_button" value="<?php _e('Hochladen / Ausw&auml;hlen', 'wke2014'); ?>" type="button"  />
 
 			    <br /><?php _e('Gebe eine URL zu einem Bild ein oder verwende die Mediathek um es hochzuladen oder um ein vorhandenes Bild auszuw&auml;hlen.', 'wke2014'); ?>
 	  

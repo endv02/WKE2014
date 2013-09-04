@@ -249,7 +249,7 @@ function wke2014_admin_style() {
     wp_enqueue_media();
     
     wp_register_style( 'themeadminstyle', get_template_directory_uri().'/css/admin.css' );	   
-    wp_register_script('themeadminscripts', get_template_directory_uri().'/js/admin.js', array('jquery','media-upload','thickbox'));    
+    wp_register_script('themeadminscripts', get_template_directory_uri().'/js/admin.js', array('jquery'));    
     wp_enqueue_style( 'themeadminstyle' );	
     wp_enqueue_script('themeadminscripts');	   
 }
