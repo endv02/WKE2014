@@ -107,7 +107,12 @@ $defaultoptions = array(
     'color-cfpbutton'			=> 'gelb',
     
     'aktiv-slider'			=> 1,
-    
+    'yt-alternativeembed'           => 1,
+        /* YouTube Videos ueber eigenen Embedcode gestalten und an youtbe-nocookie lenken */
+    'yt-norel'			 => 1,
+	/* Keine weiteren Videos vorschlagen */
+    'yt-content-width'              => 665,
+    'yt-content-height'             => 500,    
     
 );
 
