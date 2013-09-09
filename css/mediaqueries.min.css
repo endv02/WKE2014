@@ -1,3 +1,7 @@
+@media screen and (max-width: 1090px) {
+div#kopf div#logo{width:300px;}
+div#kopf div#logo p {padding:40px;}
+}
 @media screen and (max-width: 960px) {
 body{max-width:960px;overflow:auto;-webkit-text-size-adjust:none;}
 div#seite{background-image:none;padding-left:0;}
@@ -43,7 +47,7 @@ div#seite{min-width:0;border-width:0;}
 img{max-width:100%;height:auto;}
 div#kopf{padding-bottom:0;min-width:0;position:relative;background-image:none;height:auto;border-bottom:none!important;}
 div#kopf div#logo{position:relative;height:120px;min-height:109px;border-bottom:3px solid #66B32D;padding:0 10px 0 0;}
-div#kopf div#logo img{max-height:75px;max-width:90%;margin:0;}
+div#kopf div#logo img{max-height:75px;max-width:90%;width:auto;margin:0;}
 div#kopf div#logo p{display:block;width:100%;max-width:100%;height:auto;top:0;font-size:120%;line-height:110%;letter-spacing:0;text-align:left;padding:15px 5px 5px 10px;}
 div#kopf div#logo p a{text-decoration:none;}
 #kopf #header-box{width:50%;height:120px;border-bottom:3px solid #66B32D;}

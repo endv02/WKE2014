@@ -298,9 +298,12 @@
 	
 	div#kopf div#suche input {
 		font-size: 0.7em;
-		background: #fff;
+		background: #f7f7f7;
 		border: #666 1px solid;
 		color: #333;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
 	}
 	
 	div#kopf div#suche input:active,
@@ -318,6 +321,7 @@
 		width: 11.8em;
 		padding: 4px;
 		float: left;
+		background:#fff;
 	}
 	div#kopf div#suche input[type="submit"] {
 	    float: right;
@@ -386,7 +390,7 @@
 	ul#navigation li a {
 		display: block;
 		font-size: 0.76em;
-		padding: 4px 10px 4px 5px;
+		padding: 6px 10px 6px 5px;
 		text-decoration: none;
 		border-left: 3px solid #66b32d;
 		border-bottom: 1px solid #66b32d;

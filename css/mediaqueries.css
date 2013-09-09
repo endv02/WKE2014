@@ -21,8 +21,14 @@
 --------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 1090px) {
-	
-		
+    
+    div#kopf div#logo {
+	width:300px;
+    }
+    div#kopf div#logo p {
+	padding:40px;
+    }
+    
 }
 
 
@@ -320,6 +326,7 @@
 		margin: 0;
 		max-height: 75px;
 		max-width: 90%;
+		width:auto;
 	}
 	
 	div#kopf div#logo p {
