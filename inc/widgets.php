@@ -211,30 +211,34 @@ class Bannerlink_Widget extends WP_Widget {
 	    $image_id = $instance['image_id'];
 	    ?>
 		    <p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php echo 'Titel:'; ?></label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Titel:','wke2014'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" 
 			       name="<?php echo $this->get_field_name('title'); ?>" 
 			       type="text" value="<?php echo esc_attr($title); ?>" />
 	  
 		    </p>
 		    <p>
-			<label for="<?php echo $this->get_field_id('url'); ?>"><?php echo 'Ziel-URL (inkl. http(s)):'; ?></label>
+			<label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('Ziel-URL:','wke2014'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" 
 			       name="<?php echo $this->get_field_name('url'); ?>" 
 			       type="text" value="<?php echo esc_attr($url); ?>" />
 	  
 		    </p>
 		     <p>
-			<label for="<?php echo $this->get_field_id('image_url'); ?>"><?php echo 'Bild-URL (inkl. http(s)):'; ?></label>
-			<input 	class="image_url widefat" id="<?php echo $this->get_field_id('image_url'); ?>" 
+			<label for="<?php echo $this->get_field_id('image_url'); ?>"><?php _e('Bild-URL:','wke2014'); ?>
+                        	<input 	class="image_url widefat" id="<?php echo $this->get_field_id('image_url'); ?>" 
 			       name="<?php echo $this->get_field_name('image_url'); ?>" 
 			       type="text" value="<?php echo esc_attr($image_url); ?>" />
-			<input type="hidden" class="image_id" id="<?php echo $this->get_field_id('image_id'); ?>" 
-			       name="<?php echo $this->get_field_name('image_id'); ?>" />
-			<input class="upload_image_button" value="<?php _e('Hochladen / Ausw&auml;hlen', 'wke2014'); ?>" type="button"  />
+                  
+
+                        	<input type="hidden" id="<?php echo $this->get_field_id('image_id'); ?>" 
+                                  class="image_id"  name="<?php echo $this->get_field_name('image_id'); ?>" />
+                                <input
+                                    id="<?php echo $this->get_field_id('image_url'); ?>_button"
+                                    class="upload_image_button" value="<?php _e('Hochladen / Ausw&auml;hlen', 'wke2014'); ?>" type="button" />
 
 			    <br /><?php _e('Gebe eine URL zu einem Bild ein oder verwende die Mediathek um es hochzuladen oder um ein vorhandenes Bild auszuw&auml;hlen.', 'wke2014'); ?>
-	  
+                        </label> 
 		    </p>
 		    <?php 
 	}
@@ -265,34 +269,38 @@ class Bannerlink_Widget extends WP_Widget {
 		$image_width = $image_attributes[1];
 		$image_height = $image_attributes[2];
 	    }
-	    if (isset($url)) {
-		$url = wp_make_link_relative($url);
-	    }
-	    if (isset($image_url)) {
-		$image_url = wp_make_link_relative($image_url);
-	    }
+            $site_link = home_url();
+            if ((isset($url))&& (strpos($url, $site_link) !== false)) {  
+                $url = wp_make_link_relative($url);
+            }
+            if ((isset($image_url))&& (strpos($image_url, $site_link) !== false)) {  
+                $image_url = wp_make_link_relative($image_url);
+            }                       
+                                  
 	    if (!isset($url) && !isset($image_url)) {
 		return;
 	    }
-	    echo $before_widget;
-	    
+	    echo $before_widget;	    
 	    echo '<p class="bannerlink">';
-	    echo '<a href="'.$url.'">';
+            if ((isset($url)) && (strlen($url)>0))
+                echo '<a href="'.$url.'">';
 	    if ($image_url) {
 		if ($image_height > 0) {
 		    echo '<img src="'.$image_url.'" width="'.$image_width.'" height="'.$image_height.'" alt="'.$title.'">';
 		} else {
-		    echo '<img src="'.$image_url.'" style="max-width: '.$defaultoptions['bannerlink-width'].'; height: auto;" alt="'.$title.'">';
+		    echo '<img src="'.$image_url.'" style="max-width: '.$defaultoptions['bannerlink-width'].'px; height: auto;" alt="'.$title.'">';
 		}
 	    } else {
 		echo $title;
 	    }
-	    echo "</a></p>\n";
+             if ((isset($url)) && (strlen($url)>0))
+                echo '</a>';
+	    echo "</p>\n";
 	    echo $after_widget;
 	}
 	
 }	
-
+//
 // register widget
 add_action( 'widgets_init', create_function( '', 'register_widget( "Bannerlink_Widget" );' ) );
 
