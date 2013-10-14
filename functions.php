@@ -392,9 +392,11 @@ function wke2014_breadcrumbs() {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
  */
-  } elseif (is_home() || is_front_page()) {
-      echo $before .$home. $after;
-  }
+  } elseif (is_front_page()) {
+		echo $before . $home . $after;
+	} elseif (is_home()) {
+		echo $before . get_the_title(get_option('page_for_posts')) . $after;
+	}
 
 }
 
