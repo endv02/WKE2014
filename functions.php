@@ -1,4 +1,4 @@
-	<?php
+<?php
 /**
  * WKE2014 Theme Optionen
  *
