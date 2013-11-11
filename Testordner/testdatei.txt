@@ -1,3 +1,1 @@
 Halli hallo, hier kommt ein bisschen Text mit rein.
-
-Jetzt schreibe ich mal ein bisschen was dazu. Damit man dann auch die Änderungen wieder rückgängig machen kann.
